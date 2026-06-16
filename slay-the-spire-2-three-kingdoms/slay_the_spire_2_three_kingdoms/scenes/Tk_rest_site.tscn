@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cvtdsx5v7l4b4"]
+
+[node name="RegentRestSite" type="Node2D" unique_id=2070845089]
+scale = Vector2(0.760006, 0.760006)
+
+[node name="SpineSprite" type="TextureRect" parent="." unique_id=1777261656]
+offset_left = -314.4712
+offset_top = -327.629
+offset_right = 363.3982
+offset_bottom = 69.05603
+expand_mode = 1
+
+[node name="ControlRoot" type="Control" parent="." unique_id=2009035107]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 17.105127
+offset_top = 24.999802
+offset_right = 17.105127
+offset_bottom = 24.999802
+
+[node name="Hitbox" type="Control" parent="ControlRoot" unique_id=97977550]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -189.4722
+offset_top = -365.78653
+offset_right = 159.20926
+offset_bottom = 34.210327
+
+[node name="ThoughtBubbleRight" type="Control" parent="ControlRoot" unique_id=1594375015]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 168.42
+offset_top = -410.523
+offset_right = 168.42
+offset_bottom = -410.523
+
+[node name="ThoughtBubbleLeft" type="Control" parent="ControlRoot" unique_id=1232564789]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -169.736
+offset_top = -392.102
+offset_right = -169.736
+offset_bottom = -392.102

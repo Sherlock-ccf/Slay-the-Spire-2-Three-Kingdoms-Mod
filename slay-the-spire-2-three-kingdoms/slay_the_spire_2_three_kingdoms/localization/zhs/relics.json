@@ -1,0 +1,22 @@
+{
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-INIT_RELIC_ONE.title": "三国杀-核心遗物1",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-INIT_RELIC_ONE.description": "每回合结束时手牌至多存在[blue]{HandLimit:diff()}[/blue]张，若多于[blue]{HandLimit:diff()}[/blue]张则需要丢弃。（核心遗物请勿删除）",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-INIT_RELIC_ONE.flavor": "三国杀玩法核心遗物1",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-INIT_RELIC_ONE.selectionScreenPrompt": "请选择{CardDraw:diff()}张牌进行丢弃。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-INIT_RELIC_TWO.title": "三国杀-核心遗物2",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-INIT_RELIC_TWO.description": "回合结束不再丢弃牌，首回合能抽4+2张牌，但之后每个回合只能抽2张牌。（核心遗物请勿删除）",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-INIT_RELIC_TWO.flavor": "三国杀玩法核心遗物2",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-INIT_RELIC_THREE.title": "三国杀-核心遗物3",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-INIT_RELIC_THREE.description": "当你即将受到伤害时，打出你手牌中的闪。（核心遗物请勿删除），你的格挡不会自动消失。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-INIT_RELIC_THREE.flavor": "三国杀玩法核心遗物3",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHU_GE_LIAN_NU.title": "诸葛连弩",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHU_GE_LIAN_NU.description": "每打出一张杀或火杀，获得{energyPrefix:energyIcons(1)}。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHU_GE_LIAN_NU.flavor": "诸葛连弩",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHANG_BA_SHE_MAO.title": "丈八蛇矛",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHANG_BA_SHE_MAO.description": "拾起时，移除两张牌，将1张杀加入你的牌组。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHANG_BA_SHE_MAO.flavor": "丈八蛇矛"
+}

@@ -1,0 +1,17 @@
+{
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.aromaPrinciple": "[sine][blue]……等待……[/blue][/sine]",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.banter.alive.endTurnPing": "……",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.banter.dead.endTurnPing": "……",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.cardsModifierDescription": "三国杀的卡牌现在会出现在奖励和商店中。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.cardsModifierTitle": "三国杀卡牌",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.description": "一个在无尽等待中的存在。\n时间对[gold]三国杀[/gold]而言，不过是另一种形式的永恒。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.eventDeathPrevention": "我还得继续等下去……",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.goldMonologue": "[sine]这些金币……也许能派上用场……[/sine]",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.possessiveAdjective": "他的",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.pronounObject": "他",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.pronounPossessive": "他的",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.pronounSubject": "他",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.title": "三国杀",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.titleObject": "三国杀",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TK_CHARACTER.unlockText": "用[pink]{Prerequisite}[/pink]进行一局游戏来解锁这个角色。"
+}

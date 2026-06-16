@@ -1,0 +1,248 @@
+{
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-SHA.title": "杀",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-SHA.description": "造成{Damage:diff()}点伤害。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-SHAN.title":"闪",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-SHAN.description": "将要收到伤害时自动打出，免疫这次伤害。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TAO.title": "桃",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TAO.description": "回复{Heal:diff()}点生命",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIU.title": "酒",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIU.description": "回复{Heal:diff()}点生命,下1张攻击牌被打出两次。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-HUO_SHA.title": "火杀",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-HUO_SHA.description": "造成{Damage:diff()}点[gold]属性伤害[/gold]。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WU_ZHONG_SHENG_YOU.title": "无中生有",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WU_ZHONG_SHENG_YOU.description": "抽{Cards:diff()}张牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LE_BU_SI_SHU.title": "乐不思蜀",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LE_BU_SI_SHU.description": "使1名敌人跳过当前回合。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WAN_JIAN_QI_FA.title": "万箭齐发",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WAN_JIAN_QI_FA.description": "对所有敌人造成{Damage:diff()}点伤害。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-NAN_MAN_RU_QIN.title": "南蛮入侵",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-NAN_MAN_RU_QIN.description": "对所有意图不是攻击敌人造成{Damage:diff()}点伤害。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-BING_LIN_CHENG_XIA.title": "兵临城下",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-BING_LIN_CHENG_XIA.description": "抽{Cards:diff()}张牌，打出其中所有杀。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TAO_YUAN_JIE_YI.title": "桃园结义",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TAO_YUAN_JIE_YI.description": "回复{Energy:energyIcons()}，所有敌人回复{Heal:diff()}点生命值。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TIAN_DU.title": "郭嘉-天妒",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TIAN_DU.description": "当你受到伤害时，抽{Cards:diff()}张牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIAN_XIONG.title": "曹操-奸雄",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIAN_XIONG.description": "当你受到伤害时，从弃牌堆中获得1张杀。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QIN_ZHENG.title": "骆统-勤政",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QIN_ZHENG.description": "每当你打出第3，5，8张牌后，抽一张牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KUANG_GU.title": "势魏延-狂骨",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KUANG_GU.description": "生命值降至1，本回合内每打出一张杀，回复8点生命值，抽1张牌，获得{energyPrefix:energyIcons(1)}，获得一点力量。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-BING_LIANG_CUN_DUAN.title": "兵粮寸断",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-BING_LIANG_CUN_DUAN.description": "给予{VulnerablePower:diff()}层[gold]易伤[/gold]。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-GUO_HE_CHAI_QIAO.title": "过河拆桥",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-GUO_HE_CHAI_QIAO.description": "敌人失去{StrengthLoss:diff()}点力量。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WU_XIE_KE_JI.title": "无懈可击",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WU_XIE_KE_JI.description": "获得一层[gold]人工制品[/gold]。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YING_ZI.title": "英姿",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YING_ZI.description": "你的回合开始时，额外抽一张牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-XUE_HEN.title": "关银屏-雪恨",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-XUE_HEN.description": "造成{Damage:diff()}点伤害，将手牌中任意张手牌变化为带有[gold]消耗[/gold]的[gold]{IfUpgraded:show:杀+|杀}[/gold]，且这些[gold]杀[/gold]在本回合内耗能为0。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-XUE_HEN.selectionScreenPrompt": "请选择任意张牌进行变化。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHI_HENG.title": "孙权-制衡",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHI_HENG.description": "你的回合开始时，丢弃任意张手牌，抽取等量的牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LUAN_JI.title": "袁绍-乱击",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LUAN_JI.description": "丢其两张牌，向你的手牌中加入1张费用为0的带有[gold]消耗[/gold]和[gold]虚无[/gold]的[gold]万箭齐发[/gold]",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-XIE_ZHENG.title": "司马昭-挟证",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-XIE_ZHENG.description": "你的回合开始时，向你的手牌中加入1张[gold]兵临城下[/gold]。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-FAN_KUI.title": "司马懿-反馈",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-FAN_KUI.description": "本回合内，每受到1次攻击，敌人失去1点力量。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-GUO_SE.title": "大乔-国色",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-GUO_SE.description": "丢弃所有手牌，向你的手牌中加入一张{IfUpgraded:show:0费}带有[gold]消耗[/gold]和[gold]虚无[/gold]的[gold]乐不思蜀[/gold]。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TU_XI.title": "张辽-突袭",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TU_XI.description": "丢弃2张牌，所有敌人失去{StrengthLoss:diff()}点力量，每有一个敌人，获得1点力量。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-DUAN_JIN.title": "骥李典-断津",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-DUAN_JIN.description": "你每打出1张基本牌，对最左侧敌人给予{WeakGive:diff()}层虚弱。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-SHAN_JIA.title": "曹纯-缮甲",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-SHAN_JIA.description": "造成{Damage:diff()}点伤害，抽当前回合数的牌（上限为3）。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JUE_JIN.title": "曹髦-决进",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JUE_JIN.description": "获得{BlockGet:diff()}点格挡，消耗牌堆中所有闪桃酒，每消耗1张，获得{BlockExtraGet:diff()}点格挡，每回合将1张0费的带有[gold]虚无[/gold]和[gold]消耗[/gold]的[gold]酒[/gold]加入你的手牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QIAO_SHI.title": "谋夏侯氏-樵拾",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QIAO_SHI.description": "获得1层无实体，给予自身3层虚弱。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JI_LI.title": "沙摩柯-蒺藜",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JI_LI.description": "每回合打出第X张牌时，抽X张牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YING_JIA.title": "势董昭-迎驾",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YING_JIA.description": "丢弃2张牌，结束你的回合，开启新的回合。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JUE_DOU.title": "决斗",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JUE_DOU.description": "如果目标敌人的意图不是攻击，则对其造成{Damage:diff()}点伤害。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TAN_FENG.title": "势夏侯尚-探锋",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TAN_FENG.description": "抽2张牌，造成{Damage:diff()}点[gold]属性伤害[/gold]。\n[gold]结束你的回合。[/gold]",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LUO_YI.title": "许褚-裸衣",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LUO_YI.description": "丢弃1张牌，造成{Damage:diff()}点伤害。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QIANG_XI.title": "典韦-强袭",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QIANG_XI.description": "失去3点生命，造成{Damage:diff()}点伤害。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LIE_GONG.title": "界黄忠-烈弓",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LIE_GONG.description": "造成{Damage:diff()}点伤害一次，若敌人血量不小于你，则额外造成一次。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LIE_REN.title": "谋祝融-烈刃",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LIE_REN.description": "造成{Damage:diff()}点伤害，向你的手牌中加入一张[gold]0费[/gold]的带[gold]消耗[/gold]的[gold]南蛮入侵[/gold]。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHENG_SHUO.title": "势桓阶-正朔",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHENG_SHUO.description": "将你的所有未消耗的卡牌重新洗入抽牌堆，抽4张牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-HUA_SHEN.title": "界左慈-化身",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-HUA_SHEN.description": "将1张随机能力牌加入你的手牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-HAN_ZHAN.title": "势太史慈-酣战",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-HAN_ZHAN.description": "你与敌人均获得X点力量，对其造成{Damage:diff()}点伤害X次。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-SHUN_SHOU_QIAN_YANG.title": "顺手牵羊",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-SHUN_SHOU_QIAN_YANG.description": "本回合内，你获得{StrengthGet:diff()}点力量，敌人失去{StrengthLoss:diff()}点力量。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-CHU_HAI.title": "周处-除害",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-CHU_HAI.description": "造成{Damage:diff()}点伤害，斩杀时，随机升级牌组中的一张牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WEI_JING.title": "鲁芝-卫境",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WEI_JING.description": "选择一张[gold]杀[/gold]或[gold]闪[/gold]加入你的手牌，其获得消耗。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-EN_YUAN.title": "界法正-恩怨",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-EN_YUAN.description": "获得{ThornsPowerGet:diff()}点[gold]荆棘[/gold]。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LEI_JI.title": "界张角-雷击",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LEI_JI.description": "消耗手牌中的第一张[gold]闪[/gold]，然后造成{Damage:diff()}点[gold]属性伤害[/gold]3次。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-CHONG_ZHEN.title": "sp赵云-冲阵",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-CHONG_ZHEN.description": "丢弃手牌中第一张[gold]闪[/gold]，然后抽一张牌，并造成{Damage:diff()}点伤害。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-PO_JUN.title": "界徐盛-破军",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-PO_JUN.description": "给予{WeakGive:diff()}层虚弱，造成{CalculatedDamage:diff()}点伤害，敌人每有一层[gold]虚弱[/gold]，这张牌伤害增加{ExtraDamage:diff()}。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-SHEN_ZHU.title": "神太史慈-神箸",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-SHEN_ZHU.description": "若手牌中有[gold]杀[/gold],丢弃第一张[gold]杀[/gold]，造成{Damage:diff()}点伤害，抽1张牌；否则，抽{Cards:diff()}张牌，并将此牌[gold]消耗[/gold]。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TU_SHE.title": "刘焉-图射",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TU_SHE.description": "抽与敌人数量等量{IfUpgraded:show:+1}的牌。\n只有手牌中没有[gold]基本牌[/gold]时可以被打出。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JI_XI.title": "势邓艾-急袭",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JI_XI.description": "丢弃1张牌，所有敌人获得{WeakGive:diff()}层虚弱，获得与敌人数量等量的力量。\n[gold]结束你的回合。[/gold]",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIAN_YING.title": "界沮授-渐营",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIAN_YING.description": "当你打出的牌和上一张牌[gold]类型[/gold]不同时，抽1张牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-DANG_SHI.title": "骥张辽-荡势",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-DANG_SHI.description": "本回合每打出一张攻击牌，对随机一名敌人造成3点伤害，给予最左侧敌人1层虚弱。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QUE_DI.title": "文鸯-却敌",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QUE_DI.description": "失去3点最大生命，{IfUpgraded:show:抽1张牌，}丢弃1张牌，本回合内伤害翻倍。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JI_MIE.title": "神马超-寂灭",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JI_MIE.description": "对一名敌人造成与其最大生命值等量的[gold]属性伤害[/gold]，[gold]只有本回合内打出{AttackNeedPlayed:diff()}张攻击牌才能被打出[/gold]。\n本回合内已经打出[blue]{AttackPlayed:diff()}[/blue]张攻击牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-XING_SHANG.title": "谋曹丕-行殇",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-XING_SHANG.description": "每当有敌人死亡时，将一张随机稀有牌加入你的手牌，并在本场战斗中耗能为0。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-BI_YUE.title": "谋貂蝉-闭月",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-BI_YUE.description": "抽与本回合打出的攻击牌数量等量张牌，上限为{DrawCardLimit:diff()}。\n本回合内已经打出[blue]{AttackPlayed:diff()}[/blue]张攻击牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHEN_WEI.title": "谋朱然-镇围",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHEN_WEI.description": "丢弃任意张牌，每丢弃一张牌，对所有敌人造成{Damage:diff()}点伤害，给予所有敌人1层虚弱，若[gold]丢弃牌数[/gold]大于等于4，抽3张牌。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHEN_WEI.selectionScreenPrompt": "选择任意张牌进行丢弃。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-DANG_GU.title": "十常侍-党锢",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-DANG_GU.description": "每回合开始获得{Energy:energyIcons()}，获得{Amount:diff()}张随机能力牌，并在本场战斗耗能为0。\n[gold]5回合后死亡（包括本回合）[/gold]。\n[gold]每场战斗自动打出[/gold]。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YAN_CE.title": "友诸葛亮-演策",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YAN_CE.description": "随机预测你接下来打出的3张牌的类型，每打出1张与预测类型相同的牌，抽1张牌；当你打出三张牌后，根据预测正确的数量：0：失去6点生命值；1：弃2张牌；2：抽1张牌；3：抽3张牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TIE_SUO_LIAN_HUAN.title": "铁索连环",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TIE_SUO_LIAN_HUAN.description": "使所有敌人进入[gold]连环[/gold]状态。{IfUpgraded:show:抽1张牌。}",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-HUO_GONG.title": "火攻",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-HUO_GONG.description": "丢弃1张牌，造成{Damage:diff()}[gold]属性伤害[/gold]。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LU_LIAN.title": "势孙綝-戮连",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LU_LIAN.description": "使所有敌人进入[gold]连环[/gold]状态，抽1张牌，对[gold]血量最大[/gold]的敌人造成{Damage:diff()}点[gold]属性伤害[/gold]。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-CUI_KE.title": "神陆逊-摧克",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-CUI_KE.description": "对一名敌人造成{Damage:diff()}点[gold]属性伤害[/gold]，然后使其进入[gold]连环[/gold]状态。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YE_YAN.title": "神周瑜-业炎",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YE_YAN.description": "造成{CalculatedDamage:diff()}点[gold]属性伤害[/gold]，本回合内每丢弃1张牌，伤害增加{ExtraDamage:diff()}。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LIAN_HUAN.title": "谋庞统-连环",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LIAN_HUAN.description": "丢弃1张牌，给予所有不处于[gold]连环[/gold]状态的敌人造成{WeakGive:diff()}层[gold]虚弱[/gold]，然后使所有敌人进入[gold]连环[/gold]状态。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LONG_NU.title": "神刘备-龙怒",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LONG_NU.description": "失去3点生命，丢弃所有手牌，加入等量的带有[gold]消耗[/gold]的[gold]{IfUpgraded:show:火杀+|火杀}[/gold]，且在本回合内免费打出。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JU_SHOU.title": "谋曹仁-据守",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JU_SHOU.description": "丢弃2张牌，获得{BlockGet:diff()}点格挡。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KU_ROU.title": "谋黄盖-苦肉",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KU_ROU.description": "失去3点生命，获得{BlockGet:diff()}点格挡。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-RUN_WEI.title": "势陆郁生-润微",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-RUN_WEI.description": "抽{Cards:diff()}张牌，选择若干张加入你的手牌并[gold]丢弃剩余[/gold]，每丢弃1张，获得6点格挡",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-RUN_WEI.selectionScreenPrompt": "选择任意张牌进行丢弃。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-SHEN_PEI.title": "神姜维-神霈",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-SHEN_PEI.description": "造成等同于本场战斗[gold]损失生命值[/gold]的[gold]属性伤害[/gold]（本场累计损失过[blue]{HpLost:diff()}[/blue]点生命）。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-CHENG_HAO.title": "司马徽-称好",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-CHENG_HAO.description": "每当对[gold]连环[/gold]状态的敌人造成[gold]属性伤害[/gold]时，抽{Cards:diff()}张牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JU_GU.title": "糜竺-巨贾",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JU_GU.description": "本场战斗可保留手牌上限+3。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QI_ZHENG_XIANG_SHENG.title": "奇正相生",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QI_ZHENG_XIANG_SHENG.description": "如果敌人意图是攻击：抽1张牌，给予其{WeakPower:diff()}层虚弱；否则造成{Damage:diff()}点伤害，获得{energyPrefix:energyIcons(1)}。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TIAN_ZUO.title": "神荀彧-天佐",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TIAN_ZUO.description": "将4张[gold]奇正相生[/gold]加入你的抽牌堆。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIE_YING.title": "神甘宁-劫营",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIE_YING.description": "敌人获得2点力量，下个回合失去所有力量，你获得其力量。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QING_DAO.title": "势国渊-清蹈",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QING_DAO.description": "本回合内若受到伤害，手牌加入1张闪，若没有受到伤害，手牌上限+1。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WU_GU_FENG_DENG.title": "五谷丰登",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WU_GU_FENG_DENG.description": "从抽牌堆中选择1张牌加入你的手牌。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WU_GU_FENG_DENG.selectionScreenPrompt": "请选择1张牌加入你的手牌。",
+    
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-HUO_JI.title": "谋诸葛亮-火计",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-HUO_JI.description": "对所有敌人造成[blue]{Damage:diff()}[/blue]点[gold]属性伤害[/gold]，将这张牌在本场战斗中伤害增加{Increase:diff()}。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WANG_LIE.title": "势陈到-往烈",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WANG_LIE.description": "失去3点生命，造成{Damage:diff()}点伤害，下个回合开始时额外抽{Cards:diff()}张牌。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KANG_KAI.title": "曹昂-慷慨",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KANG_KAI.description": "每当失去生命后，获得{BlockGet:diff()}点格挡。"
+}

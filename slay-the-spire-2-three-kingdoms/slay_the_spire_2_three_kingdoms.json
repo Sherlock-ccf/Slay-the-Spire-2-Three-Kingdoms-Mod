@@ -1,0 +1,13 @@
+{
+    "id": "slay_the_spire_2_three_kingdoms",
+    "name": "slay_the_spire_2_three_kingdoms",
+    "author": "Sherlock",
+    "description": "Mod slay_the_spire_2_three_kingdoms",
+    "version": "1.0",
+    "has_pck": true,
+    "has_dll": true,
+    "dependencies": [
+        "BaseLib"
+    ],
+    "affects_gameplay": true
+}
