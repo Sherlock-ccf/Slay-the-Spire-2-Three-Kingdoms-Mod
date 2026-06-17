@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using slay_the_spire_2_three_kingdoms.Cards;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Commands;
 
 namespace slay_the_spire_2_three_kingdoms.Relics;
@@ -26,6 +27,10 @@ public class InitRelicThree : CustomRelicModel
     // ´óÍ¼±ê£¨Ô­°æ256x256£©
     protected override string BigIconPath => $"res://slay_the_spire_2_three_kingdoms/images/relics/InitRelicOne_bg.png";
 
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new DynamicVar("AutoPlay",0)
+    ];
     public override decimal ModifyHpLostAfterOstyLate(Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
         if (!CombatManager.Instance.IsInProgress)
@@ -40,11 +45,25 @@ public class InitRelicThree : CustomRelicModel
         {
             return amount;
         }
-        bool hasShan = PileType.Hand.GetPile(Owner.Creature.Player)
-        .Cards.Any(c => c is Shan);
-        if (hasShan)
+        if (amount < target.Block)
         {
-            return 0m;
+            return amount;
+        }
+        if (!CombatManager.Instance.IsInProgress)
+        {
+            return amount;
+        }
+        if (target == Owner.Creature && Owner.Creature.Player != null && cardSource?.Owner != Owner && dealer != Owner.Creature)
+        {
+            IEnumerable<CardModel> enumerable = PileType.Hand.GetPile(Owner.Creature.Player).Cards.Where((CardModel c) => c is Shan).ToList();
+            if (enumerable != null)
+            {
+                foreach (CardModel item in enumerable)
+                {
+                    DynamicVars["AutoPlay"].BaseValue = 1;
+                    return 0;
+                }
+            }
         }
         return amount;
     }
@@ -57,11 +76,12 @@ public class InitRelicThree : CustomRelicModel
         if (target == Owner.Creature && Owner.Creature.Player != null && cardSource?.Owner != Owner && dealer != Owner.Creature)
         {
             IEnumerable<CardModel> enumerable = PileType.Hand.GetPile(Owner.Creature.Player).Cards.Where((CardModel c) => c is Shan).ToList();
-            if (enumerable != null)
+            if (enumerable != null && DynamicVars["AutoPlay"].BaseValue == 1)
             {
                 foreach (CardModel item in enumerable)
                 {
-                    await CardCmd.AutoPlay(choiceContext, item, Owner.Creature);
+                    DynamicVars["AutoPlay"].BaseValue = 0;
+                    await CardCmd.AutoPlay(choiceContext, item, null);
                     break;
                 }
             }

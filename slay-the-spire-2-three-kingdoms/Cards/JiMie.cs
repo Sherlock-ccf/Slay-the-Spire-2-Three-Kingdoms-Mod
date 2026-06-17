@@ -16,7 +16,7 @@ public class JiMie : CustomCardModel
 {
     private const int energyCost = 0;
     private const CardType type = CardType.Attack;
-    private const CardRarity rarity = CardRarity.Rare;
+    private const CardRarity rarity = CardRarity.Ancient;
     private const TargetType targetType = TargetType.AnyEnemy;
     private const bool shouldShowInCardLibrary = true;
     protected override bool IsPlayable => DynamicVars["AttackPlayed"].BaseValue >= DynamicVars["AttackNeedPlayed"].BaseValue;
