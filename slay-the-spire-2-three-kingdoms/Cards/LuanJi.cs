@@ -35,7 +35,7 @@ public class LuanJi : CustomCardModel
             cardModel.SetToFreeThisCombat();
             CardCmd.ApplyKeyword(cardModel, CardKeyword.Exhaust);
             CardCmd.ApplyKeyword(cardModel, CardKeyword.Ethereal);
-            await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
+            await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, Owner);
         }
     }
 }

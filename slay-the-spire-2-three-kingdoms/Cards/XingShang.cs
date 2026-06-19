@@ -22,7 +22,7 @@ public class XingShang : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<XingShangPower>(Owner.Creature, 1m, Owner.Creature, this);
+        await PowerCmd.Apply<XingShangPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
     protected override void OnUpgrade()
     {

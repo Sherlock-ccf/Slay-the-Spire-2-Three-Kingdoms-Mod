@@ -30,7 +30,7 @@ public class BingLiangCunDuan : CustomCardModel
     {
         if (cardPlay.Target != null)
         {
-            await PowerCmd.Apply<VulnerablePower>(cardPlay.Target, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<VulnerablePower>(choiceContext, cardPlay.Target, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this);
         }
     }
     protected override void OnUpgrade()

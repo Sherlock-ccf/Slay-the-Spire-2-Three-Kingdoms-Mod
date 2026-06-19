@@ -27,7 +27,7 @@ public class DuanJinPower : CustomPowerModel
             if (CombatState != null && CombatState.HittableEnemies.Count > 0)
             {
                 Creature target = CombatState.HittableEnemies[0];
-                await PowerCmd.Apply<WeakPower>(target, Amount, Owner.Player.Creature, null);
+                await PowerCmd.Apply<WeakPower>(context,target, Amount, Owner.Player.Creature, null);
             }
         }
     }

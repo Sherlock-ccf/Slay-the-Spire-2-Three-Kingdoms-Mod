@@ -35,7 +35,7 @@ public class QinZheng : CustomCardModel
     // 打出时的效果逻辑
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<QinZhengPower>(Owner.Creature, 1, Owner.Creature, this);
+        await PowerCmd.Apply<QinZhengPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
 
     // 升级后的效果逻辑

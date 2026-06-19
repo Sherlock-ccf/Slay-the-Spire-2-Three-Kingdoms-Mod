@@ -21,7 +21,7 @@ public class FanKui : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<FanKuiPower>(Owner.Creature, 1m, Owner.Creature, this);
+        await PowerCmd.Apply<FanKuiPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
     protected override void OnUpgrade()
     {

@@ -36,7 +36,7 @@ public class ZhenWei : CustomCardModel
             .Execute(choiceContext);
             foreach (Creature enermy in CombatState.HittableEnemies)
             {
-                await PowerCmd.Apply<WeakPower>(enermy, list.Count, Owner.Creature, this);
+                await PowerCmd.Apply<WeakPower>(choiceContext, enermy, list.Count, Owner.Creature, this);
             }
             await CardCmd.Discard(choiceContext, list);
         }

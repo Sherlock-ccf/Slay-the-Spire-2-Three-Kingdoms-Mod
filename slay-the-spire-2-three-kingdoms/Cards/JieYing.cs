@@ -24,14 +24,14 @@ public class JieYing : CustomCardModel
     {
         HoverTipFactory.FromPower<StrengthPower>(),
         HoverTipFactory.FromPower<YingPower>(),
-        HoverTipFactory.FromPower<JieYingPower>() 
+        HoverTipFactory.FromPower<JieYingPower>()
     };
     public JieYing() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if(cardPlay.Target==null)
+        if (cardPlay.Target == null)
         {
             return;
         }
@@ -39,9 +39,9 @@ public class JieYing : CustomCardModel
         {
             await PowerCmd.Remove<JieYingPower>(Owner.Creature);
         }
-        await PowerCmd.Apply<JieYingPower>(Owner.Creature, 1, Owner.Creature, this);
-        await PowerCmd.Apply<StrengthPower>(cardPlay.Target, 2, Owner.Creature, this);
-        await PowerCmd.Apply<YingPower>(cardPlay.Target, 1, Owner.Creature, this);
+        await PowerCmd.Apply<JieYingPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
+        await PowerCmd.Apply<StrengthPower>(choiceContext, cardPlay.Target, 2, Owner.Creature, this);
+        await PowerCmd.Apply<YingPower>(choiceContext, cardPlay.Target, 1, Owner.Creature, this);
     }
     protected override void OnUpgrade()
     {

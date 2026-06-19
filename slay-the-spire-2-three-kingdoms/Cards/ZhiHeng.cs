@@ -33,7 +33,7 @@ public class ZhiHeng : CustomCardModel
     // 打出时的效果逻辑
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<ZhiHengPower>(Owner.Creature, 1m, Owner.Creature, this);
+        await PowerCmd.Apply<ZhiHengPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
 
     // 升级后的效果逻辑

@@ -29,8 +29,8 @@ public class JieYingPower : CustomPowerModel
                         {
                             amount = strengthPower.Amount;
                         }
-                        await PowerCmd.Apply<StrengthPower>(Owner, amount, Owner, null);
-                        await PowerCmd.Apply<StrengthPower>(enermy, -amount, Owner, null);
+                        await PowerCmd.Apply<StrengthPower>(choiceContext, Owner, amount, Owner, null);
+                        await PowerCmd.Apply<StrengthPower>(choiceContext, enermy, -amount, Owner, null);
                     }
                     await PowerCmd.Remove<YingPower>(enermy);
                 }

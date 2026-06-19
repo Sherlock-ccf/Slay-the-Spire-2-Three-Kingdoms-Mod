@@ -42,7 +42,7 @@ public class LuLian : CustomCardModel
         Creature target = CombatState.HittableEnemies[0];
         foreach (Creature creature in CombatState.Enemies)
         {
-            await PowerCmd.Apply<LianHuanPower>(creature, 1, Owner.Creature, this);
+            await PowerCmd.Apply<LianHuanPower>(choiceContext, creature, 1, Owner.Creature, this);
             if (creature.CurrentHp > target.CurrentHp)
             {
                 target = creature;

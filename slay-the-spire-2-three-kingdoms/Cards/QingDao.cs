@@ -21,7 +21,7 @@ public class QingDao : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<QingDaoPower>(Owner.Creature, 1, Owner.Creature, this);
+        await PowerCmd.Apply<QingDaoPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

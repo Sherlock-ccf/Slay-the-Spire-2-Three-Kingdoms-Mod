@@ -61,7 +61,7 @@ public class JueJin : CustomCardModel
                 await CreatureCmd.GainBlock(Owner.Creature, (BlockVar)DynamicVars["BlockExtraGet"], cardPlay);
             }
         }
-        await PowerCmd.Apply<JueJinPower>(Owner.Creature, 1m, Owner.Creature, this);
+        await PowerCmd.Apply<JueJinPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
 
     // 升级后的效果逻辑

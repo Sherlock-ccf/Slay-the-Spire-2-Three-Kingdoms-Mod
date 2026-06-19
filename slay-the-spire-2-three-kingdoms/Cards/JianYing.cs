@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using slay_the_spire_2_three_kingdoms.Character;
 using slay_the_spire_2_three_kingdoms.Powers;
 namespace slay_the_spire_2_three_kingdoms.Cards;
+
 [Pool(typeof(TkCardPool))]
 public class JianYing : CustomCardModel
 {
@@ -16,14 +17,12 @@ public class JianYing : CustomCardModel
     private const TargetType targetType = TargetType.Self;
     private const bool shouldShowInCardLibrary = true;
     public override string PortraitPath => $"res://slay_the_spire_2_three_kingdoms/images/cards/{nameof(JianYing)}.png";
-
     public JianYing() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
-    // 打出时的效果逻辑
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<JianYingPower>(Owner.Creature, 1, Owner.Creature, this);
+        await PowerCmd.Apply<JianYingPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
     protected override void OnUpgrade()
     {

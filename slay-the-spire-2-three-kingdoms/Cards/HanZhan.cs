@@ -28,8 +28,8 @@ public class HanZhan : CustomCardModel
         int num = ResolveEnergyXValue();
         if (cardPlay.Target != null)
         {
-            await PowerCmd.Apply<StrengthPower>(cardPlay.Target, num, Owner.Creature, this);
-            await PowerCmd.Apply<StrengthPower>(Owner.Creature, num, Owner.Creature, this);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, cardPlay.Target, num, Owner.Creature, this);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, num, Owner.Creature, this);
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount(num)
             .FromCard(this)
             .Targeting(cardPlay.Target)

@@ -24,7 +24,7 @@ public class KangKai : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<KangKaiPower>(Owner.Creature, DynamicVars["BlockGet"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<KangKaiPower>(choiceContext, Owner.Creature, DynamicVars["BlockGet"].BaseValue, Owner.Creature, this);
     }
     protected override void OnUpgrade()
     {

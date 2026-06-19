@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using slay_the_spire_2_three_kingdoms.KeyWords;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
@@ -75,7 +76,7 @@ public class JiMie : CustomCardModel
     {
         DynamicVars["AttackPlayed"].BaseValue += amount;
     }
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side == Owner.Creature.Side)
         {

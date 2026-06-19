@@ -29,7 +29,7 @@ public class DuanJin : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<DuanJinPower>(Owner.Creature, DynamicVars["WeakGive"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<DuanJinPower>(choiceContext, Owner.Creature, DynamicVars["WeakGive"].BaseValue, Owner.Creature, this);
     }
     protected override void OnUpgrade()
     {

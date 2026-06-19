@@ -39,7 +39,7 @@ public class QiZhengXiangSheng : CustomCardModel
         if (enermy.Monster?.IntendsToAttack == true)
         {
             await CardPileCmd.Draw(choiceContext, 1, Owner);
-            await PowerCmd.Apply<WeakPower>(enermy, DynamicVars.Weak.BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<WeakPower>(choiceContext, enermy, DynamicVars.Weak.BaseValue, Owner.Creature, this);
         }
         else
         {

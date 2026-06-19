@@ -10,7 +10,6 @@ using slay_the_spire_2_three_kingdoms.KeyWords;
 using slay_the_spire_2_three_kingdoms.Character;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
-// ¼ÓÈëÄÄ¸ö¿¨³Ø
 [Pool(typeof(TkCardPool))]
 public class HuoGong : CustomCardModel
 {

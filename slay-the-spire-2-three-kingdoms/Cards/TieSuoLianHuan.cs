@@ -34,7 +34,7 @@ public class TieSuoLianHuan : CustomCardModel
         }
         foreach (Creature creature in CombatState.Enemies)
         {
-            await PowerCmd.Apply<LianHuanPower>(creature, 1, Owner.Creature, this);
+            await PowerCmd.Apply<LianHuanPower>(choiceContext, creature, 1, Owner.Creature, this);
         }
         if (IsUpgraded)
         {

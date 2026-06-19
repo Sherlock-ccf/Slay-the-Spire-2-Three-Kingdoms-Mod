@@ -41,9 +41,9 @@ public class ShunShouQianYang : CustomCardModel
     {
         if (cardPlay.Target != null)
         {
-            await PowerCmd.Apply<StrengthPower>(cardPlay.Target, -DynamicVars["StrengthLoss"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, cardPlay.Target, -DynamicVars["StrengthLoss"].BaseValue, Owner.Creature, this);
         }
-        await PowerCmd.Apply<StrengthPower>(Owner.Creature, DynamicVars["StrengthGet"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, DynamicVars["StrengthGet"].BaseValue, Owner.Creature, this);
     }
 
     // 升级后的效果逻辑

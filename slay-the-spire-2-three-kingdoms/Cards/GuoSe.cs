@@ -33,7 +33,7 @@ public class GuoSe : CustomCardModel
             }
             CardCmd.ApplyKeyword(cardModel, CardKeyword.Exhaust);
             CardCmd.ApplyKeyword(cardModel, CardKeyword.Ethereal);
-            await CardPileCmd.AddGeneratedCardToCombat(cardModel, Owner.PlayerCombatState.Hand.Type, addedByPlayer: true);
+            await CardPileCmd.AddGeneratedCardToCombat(cardModel, Owner.PlayerCombatState.Hand.Type, Owner);
         }
     }
 }

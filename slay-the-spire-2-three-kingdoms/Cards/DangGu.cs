@@ -32,16 +32,16 @@ public class DangGu : CustomCardModel
         {
             return;
         }
-        await PowerCmd.Apply<DangGuPower>(Owner.Creature, DynamicVars["Amount"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<DangGuPower>(choiceContext, Owner.Creature, DynamicVars["Amount"].BaseValue, Owner.Creature, this);
     }
     protected override void OnUpgrade()
     {
         DynamicVars["Amount"].UpgradeValueBy(1m);
         DynamicVars.Energy.UpgradeValueBy(1);
     }
-    public override async Task BeforePlayPhaseStart(PlayerChoiceContext choiceContext, Player player)
+    public override async Task AfterAutoPrePlayPhaseEntered(PlayerChoiceContext choiceContext, Player player)
     {
-        if (CombatState != null && player == Owner && CombatState.RoundNumber == 1)
+        if (Owner.PlayerCombatState != null && player == Owner && Owner.PlayerCombatState.TurnNumber <= 1)
         {
             await CardCmd.AutoPlay(choiceContext, this, null);
         }

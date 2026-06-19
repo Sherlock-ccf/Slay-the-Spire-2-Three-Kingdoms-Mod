@@ -40,7 +40,7 @@ public class HuaShen : CustomCardModel
                 select c, 1, Owner.RunState.Rng.CombatCardGeneration).FirstOrDefault();
         if (cardModel != null)
         {
-            await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
+            await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, Owner);
         }
     }
 

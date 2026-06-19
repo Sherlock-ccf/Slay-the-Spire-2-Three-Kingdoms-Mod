@@ -29,7 +29,7 @@ public class XieZhengPower : CustomPowerModel
                 if (Owner.Player.PlayerCombatState != null)
                 {
                     CardModel card2 = cardModel.CreateClone();
-                    await CardPileCmd.AddGeneratedCardToCombat(card2, Owner.Player.PlayerCombatState.Hand.Type, addedByPlayer: true);
+                    await CardPileCmd.AddGeneratedCardToCombat(card2, Owner.Player.PlayerCombatState.Hand.Type, Owner.Player);
                 }
             }
         }

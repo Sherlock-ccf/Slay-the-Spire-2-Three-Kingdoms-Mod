@@ -32,7 +32,7 @@ public class TianZuo : CustomCardModel
         {
             cards.Add(CombatState.CreateCard<QiZhengXiangSheng>(Owner));
         }
-        IReadOnlyList<CardPileAddResult> results = await CardPileCmd.AddGeneratedCardsToCombat(cards, PileType.Draw, addedByPlayer: true, CardPilePosition.Random);
+        IReadOnlyList<CardPileAddResult> results = await CardPileCmd.AddGeneratedCardsToCombat(cards, PileType.Draw, Owner, CardPilePosition.Random);
         if (LocalContext.IsMe(Owner))
         {
             CardCmd.PreviewCardPileAdd(results);

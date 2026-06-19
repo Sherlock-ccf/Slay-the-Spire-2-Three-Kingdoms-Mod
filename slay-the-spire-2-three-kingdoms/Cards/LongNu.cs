@@ -45,7 +45,7 @@ public class LongNu : CustomCardModel
             for (int i = 1; i <= handSize; i++)
             {
                 CardModel card2 = cardModel.CreateClone();
-                await CardPileCmd.AddGeneratedCardToCombat(card2, Owner.PlayerCombatState.Hand.Type, addedByPlayer: true);
+                await CardPileCmd.AddGeneratedCardToCombat(card2, Owner.PlayerCombatState.Hand.Type, Owner);
             }
         }
     }

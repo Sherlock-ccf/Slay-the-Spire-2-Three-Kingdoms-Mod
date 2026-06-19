@@ -35,7 +35,7 @@ public class WangLie : CustomCardModel
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
         }
-        await PowerCmd.Apply<DrawCardsNextTurnPower>(Owner.Creature, 2m, Owner.Creature, this);
+        await PowerCmd.Apply<DrawCardsNextTurnPower>(choiceContext, Owner.Creature, 2m, Owner.Creature, this);
     }
     protected override void OnUpgrade()
     {

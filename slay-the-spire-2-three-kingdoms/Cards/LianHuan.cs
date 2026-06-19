@@ -42,8 +42,8 @@ public class LianHuan : CustomCardModel
         {
             if (!creature.HasPower<LianHuanPower>())
             {
-                await PowerCmd.Apply<WeakPower>(creature, DynamicVars["WeakGive"].BaseValue, Owner.Creature, this);
-                await PowerCmd.Apply<LianHuanPower>(creature, 1, Owner.Creature, this);
+                await PowerCmd.Apply<WeakPower>(choiceContext, creature, DynamicVars["WeakGive"].BaseValue, Owner.Creature, this);
+                await PowerCmd.Apply<LianHuanPower>(choiceContext, creature, 1, Owner.Creature, this);
             }
         }
     }

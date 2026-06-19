@@ -27,7 +27,7 @@ public class GuoHeChaiQiao : CustomCardModel
     {
         if (cardPlay.Target != null)
         {
-            await PowerCmd.Apply<StrengthPower>(cardPlay.Target, -DynamicVars["StrengthLoss"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, cardPlay.Target, -DynamicVars["StrengthLoss"].BaseValue, Owner.Creature, this);
         }
     }
     protected override void OnUpgrade()

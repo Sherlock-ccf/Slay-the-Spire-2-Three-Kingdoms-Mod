@@ -29,7 +29,7 @@ public class JiLi : CustomCardModel
         {
             await PowerCmd.Remove<JiLiPower>(Owner.Creature);
         }
-        await PowerCmd.Apply<JiLiPower>(Owner.Creature, num, Owner.Creature, this);
+        await PowerCmd.Apply<JiLiPower>(choiceContext, Owner.Creature, num, Owner.Creature, this);
     }
     protected override void OnUpgrade()
     {

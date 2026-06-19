@@ -9,7 +9,7 @@
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TAO.description": "回复{Heal:diff()}点生命",
 
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIU.title": "酒",
-    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIU.description": "回复{Heal:diff()}点生命,下1张攻击牌被打出两次。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIU.description": "回复{Heal:diff()}点生命,下1张攻击牌伤害翻倍。",
 
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-HUO_SHA.title": "火杀",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-HUO_SHA.description": "造成{Damage:diff()}点[gold]属性伤害[/gold]。",
@@ -244,5 +244,8 @@
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-WANG_LIE.description": "失去3点生命，造成{Damage:diff()}点伤害，下个回合开始时额外抽{Cards:diff()}张牌。",
 
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KANG_KAI.title": "曹昂-慷慨",
-    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KANG_KAI.description": "每当失去生命后，获得{BlockGet:diff()}点格挡。"
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KANG_KAI.description": "每当失去生命后，获得{BlockGet:diff()}点格挡。",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LIE_JIU.title": "烈酒",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LIE_JIU.description": "失去1点生命，本回合内，下2张攻击牌伤害翻倍"
 }

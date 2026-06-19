@@ -39,7 +39,7 @@ public class WuXieKeJi : CustomCardModel
     // 打出时的效果逻辑
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<ArtifactPower>(Owner.Creature, 1m, Owner.Creature, this);
+        await PowerCmd.Apply<ArtifactPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
 
     // 升级后的效果逻辑

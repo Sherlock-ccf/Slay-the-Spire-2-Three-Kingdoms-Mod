@@ -28,7 +28,7 @@ public class QueDi : CustomCardModel
             await CardPileCmd.Draw(choiceContext, 1, Owner);
         }
         await CardCmd.Discard(choiceContext, await CardSelectCmd.FromHandForDiscard(choiceContext, Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, 1), null, this));
-        await PowerCmd.Apply<QueDiPower>(Owner.Creature, 1m, Owner.Creature, this);
+        await PowerCmd.Apply<QueDiPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
     protected override void OnUpgrade()
     {

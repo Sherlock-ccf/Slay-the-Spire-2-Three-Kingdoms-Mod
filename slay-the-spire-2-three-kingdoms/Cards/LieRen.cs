@@ -40,7 +40,7 @@ public class LieRen : CustomCardModel
             CardModel cardModel = CombatState.CreateCard<NanManRuQin>(Owner);
             cardModel.SetToFreeThisCombat();
             CardCmd.ApplyKeyword(cardModel, CardKeyword.Exhaust);
-            await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
+            await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, Owner);
         }
     }
     protected override void OnUpgrade()

@@ -36,7 +36,7 @@ public class CuiKe : CustomCardModel
             .FromCard(this)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
-            await PowerCmd.Apply<LianHuanPower>(cardPlay.Target, 1, Owner.Creature, this);
+            await PowerCmd.Apply<LianHuanPower>(choiceContext, cardPlay.Target, 1, Owner.Creature, this);
         }
     }
     protected override void OnUpgrade()

@@ -26,7 +26,7 @@ public class XingShangPower : CustomPowerModel
             if (cardModel != null)
             {
                 cardModel.SetToFreeThisCombat();
-                await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
+                await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, Owner.Player);
             }
         }
     }

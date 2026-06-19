@@ -23,7 +23,7 @@ public class QingDaoPower : CustomPowerModel
             CardModel cardModel = CombatState.CreateCard<Shan>(Owner.Player);
             if (Owner.Player.PlayerCombatState != null)
             {
-                await CardPileCmd.AddGeneratedCardToCombat(cardModel, Owner.Player.PlayerCombatState.Hand.Type, addedByPlayer: true);
+                await CardPileCmd.AddGeneratedCardToCombat(cardModel, Owner.Player.PlayerCombatState.Hand.Type, Owner.Player);
             }
             await PowerCmd.Remove(this);
         }

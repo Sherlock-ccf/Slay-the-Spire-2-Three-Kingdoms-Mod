@@ -42,8 +42,8 @@ public class TuXi : CustomCardModel
         {
             foreach (Creature enermy in CombatState.HittableEnemies)
             {
-                await PowerCmd.Apply<StrengthPower>(enermy, -DynamicVars["StrengthLoss"].BaseValue, Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(Owner.Creature, 1m, Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext, enermy, -DynamicVars["StrengthLoss"].BaseValue, Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
             }
         }
     }

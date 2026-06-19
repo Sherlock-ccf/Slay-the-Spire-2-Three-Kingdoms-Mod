@@ -38,7 +38,7 @@ public class ChuHai : CustomCardModel
         .FromCard(this)
         .Targeting(cardPlay.Target)
         .Execute(choiceContext);
-        if (shouldTriggerFatal && attackCommand.Results.Any((DamageResult r) => r.WasTargetKilled))
+        if (shouldTriggerFatal && attackCommand.Results.Any((List<DamageResult> r) => r.Any((DamageResult g) => g.WasTargetKilled)))
         {
             IEnumerable<CardModel> enumerable = PileType.Deck.GetPile(Owner).Cards.Where((CardModel c) => c?.IsUpgradable ?? false).ToList().StableShuffle(Owner.RunState.Rng.Niche)
             .Take(1);

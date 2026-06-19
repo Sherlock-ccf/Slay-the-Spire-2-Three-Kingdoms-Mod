@@ -50,13 +50,13 @@ public class DangGuPower : CustomPowerModel
             if (cardModel != null)
             {
                 cardModel.SetToFreeThisCombat();
-                await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
+                await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, Owner.Player);
             }
         }
     }
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
-        if (side == Owner.Side && GetInternalData<Data>().LastTurn <= 1)
+        if (participants.Contains(Owner) && GetInternalData<Data>().LastTurn <= 1)
         {
             await CreatureCmd.Kill(Owner, force: true);
         }

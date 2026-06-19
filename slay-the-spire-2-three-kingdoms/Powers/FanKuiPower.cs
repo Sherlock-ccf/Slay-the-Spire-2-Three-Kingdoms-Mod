@@ -34,9 +34,9 @@ public class FanKuiPower : CustomPowerModel
     {
         if (target == Owner && result.UnblockedDamage > 0 && Owner.Player != null)
         {
-            if(dealer!=null)
+            if (dealer != null)
             {
-                await PowerCmd.Apply<StrengthPower>(dealer, -Amount,Owner, null);
+                await PowerCmd.Apply<StrengthPower>(choiceContext, dealer, -Amount, Owner, null);
             }
         }
     }

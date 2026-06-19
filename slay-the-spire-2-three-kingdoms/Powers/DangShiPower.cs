@@ -29,12 +29,12 @@ public class DangShiPower : CustomPowerModel
                 await CreatureCmd.Damage(context, creature, 3, ValueProp.Unpowered, Owner);
             }
             Creature target = CombatState.HittableEnemies[0];
-            await PowerCmd.Apply<WeakPower>(target, Amount, Owner.Player.Creature, null);
+            await PowerCmd.Apply<WeakPower>(context, target, Amount, Owner.Player.Creature, null);
         }
     }
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
-        if (side == Owner.Side)
+        if (participants.Contains(Owner))
         {
             await PowerCmd.Remove(this);
         }

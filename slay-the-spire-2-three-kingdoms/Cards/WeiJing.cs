@@ -41,7 +41,7 @@ public class WeiJing : CustomCardModel
             CardModel? cardModel = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards, Owner, canSkip: false);
             if (cardModel != null)
             {
-                await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
+                await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, Owner);
             }
         }
     }

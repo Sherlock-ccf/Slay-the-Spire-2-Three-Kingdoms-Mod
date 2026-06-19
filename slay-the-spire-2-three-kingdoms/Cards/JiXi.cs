@@ -37,9 +37,9 @@ public class JiXi : CustomCardModel
         {
             foreach (Creature enermy in CombatState.Enemies)
             {
-                await PowerCmd.Apply<WeakPower>(enermy, DynamicVars["WeakGive"].BaseValue, Owner.Creature, this);
+                await PowerCmd.Apply<WeakPower>(choiceContext, enermy, DynamicVars["WeakGive"].BaseValue, Owner.Creature, this);
             }
-            await PowerCmd.Apply<StrengthPower>(Owner.Creature, CombatState.Enemies.Count, Owner.Creature, this);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, CombatState.Enemies.Count, Owner.Creature, this);
         }
         PlayerCmd.EndTurn(Owner, canBackOut: false);
     }

@@ -27,7 +27,7 @@ public class YanCe : CustomCardModel
         {
             return;
         }
-        await PowerCmd.Apply<YanCePower>(Owner.Creature, 1, Owner.Creature, this);
+        await PowerCmd.Apply<YanCePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
     protected override void OnUpgrade()
     {

@@ -31,7 +31,7 @@ public class JueJinPower : CustomPowerModel
             
             if (Owner.Player.PlayerCombatState != null)
             {
-                await CardPileCmd.AddGeneratedCardToCombat(cardModel, Owner.Player.PlayerCombatState.Hand.Type, addedByPlayer: true);
+                await CardPileCmd.AddGeneratedCardToCombat(cardModel, Owner.Player.PlayerCombatState.Hand.Type, Owner.Player);
             }
         }
     }

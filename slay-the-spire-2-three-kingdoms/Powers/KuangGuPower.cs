@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using slay_the_spire_2_three_kingdoms.Cards;
 namespace slay_the_spire_2_three_kingdoms.Powers;
 
@@ -30,19 +31,19 @@ public class KuangGuPower : CustomPowerModel
         CardModel card = cardPlay.Card;
         if (card is Sha)
         {
-            await PowerCmd.Apply<StrengthPower>(Owner, 1, Owner, null, silent: true);
+            await PowerCmd.Apply<StrengthPower>(context, Owner, 1, Owner, null, silent: true);
             DynamicVars["StrengthGet"].BaseValue++;
             await PlayerCmd.GainEnergy(1m, Owner.Player);
             await CreatureCmd.Heal(Owner.Player.Creature, 8);
             await CardPileCmd.Draw(context, 1, Owner.Player);
         }
     }
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side == Owner.Side)
         {
             await PowerCmd.Remove(this);
-            await PowerCmd.Apply<StrengthPower>(Owner, -DynamicVars["StrengthGet"].BaseValue, Owner, null, silent: true);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner, -DynamicVars["StrengthGet"].BaseValue, Owner, null, silent: true);
         }
     }
 }
