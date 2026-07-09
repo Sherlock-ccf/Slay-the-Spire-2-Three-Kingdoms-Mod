@@ -9,11 +9,13 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Models;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class BiYue : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(BiYue)}.mp3";
     private const int energyCost = 0;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Uncommon;
@@ -29,6 +31,7 @@ public class BiYue : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         await CardPileCmd.Draw(choiceContext, Math.Min(DynamicVars["AttackPlayed"].BaseValue, DynamicVars["DrawCardLimit"].BaseValue), Owner);
     }
     protected override void OnUpgrade()

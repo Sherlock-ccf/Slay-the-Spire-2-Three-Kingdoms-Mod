@@ -45,7 +45,7 @@ public class InitRelicThree : CustomRelicModel
         {
             return amount;
         }
-        if (amount < target.Block)
+        if (amount < target.Block || amount == 0)
         {
             return amount;
         }

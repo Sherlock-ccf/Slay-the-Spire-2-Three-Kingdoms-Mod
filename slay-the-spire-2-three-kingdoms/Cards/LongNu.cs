@@ -8,11 +8,13 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using slay_the_spire_2_three_kingdoms.KeyWords;
 using slay_the_spire_2_three_kingdoms.Character;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class LongNu : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(LongNu)}.mp3";
     private const int energyCost = 2;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Uncommon;
@@ -25,9 +27,10 @@ public class LongNu : CustomCardModel
     {
     }
 
-    // 打出时的效果逻辑
+    // 鎵撳嚭鏃剁殑鏁堟灉閫昏緫
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         await CreatureCmd.Damage(choiceContext, Owner.Creature, 3, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, Owner.Creature);
         IEnumerable<CardModel> enumerable = PileType.Hand.GetPile(Owner).Cards.ToList();
         int handSize = enumerable.Count();
@@ -40,6 +43,7 @@ public class LongNu : CustomCardModel
             {
                 CardCmd.Upgrade(cardModel);
             }
+            cardModel.SetToFreeThisCombat();
             CardCmd.ApplyKeyword(cardModel, CardKeyword.Exhaust);
             cardModel.SetToFreeThisTurn();
             for (int i = 1; i <= handSize; i++)

@@ -5,12 +5,14 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using slay_the_spire_2_three_kingdoms.Character;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
-// ¼ÓÈëÄÄ¸ö¿¨³Ø
+// åŠ å…¥å“ªä¸ªå¡æ± 
 [Pool(typeof(TkCardPool))]
 public class ZhengShuo : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(ZhengShuo)}.mp3";
     private const int energyCost = 0;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Uncommon;
@@ -23,6 +25,7 @@ public class ZhengShuo : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         foreach (CardModel item in PileType.Hand.GetPile(Owner).Cards.ToList())
         {
             await CardPileCmd.Add(item, PileType.Draw);

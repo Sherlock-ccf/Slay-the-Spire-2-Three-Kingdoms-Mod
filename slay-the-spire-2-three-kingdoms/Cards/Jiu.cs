@@ -7,11 +7,13 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using slay_the_spire_2_three_kingdoms.Character;
 using slay_the_spire_2_three_kingdoms.Powers;
 using MegaCrit.Sts2.Core.Models;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class Jiu : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(Jiu)}.mp3";
     private const int energyCost = 2;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Basic;
@@ -27,6 +29,7 @@ public class Jiu : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         await CreatureCmd.Heal(
         Owner.Creature,
         DynamicVars.Heal.BaseValue

@@ -6,37 +6,40 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using slay_the_spire_2_three_kingdoms.Powers;
 using slay_the_spire_2_three_kingdoms.Character;
 using MegaCrit.Sts2.Core.ValueProps;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
-// ¼ÓÈëÄÄ¸ö¿¨³Ø
+// åŠ å…¥å“ªä¸ªå¡æ± 
 [Pool(typeof(TkCardPool))]
 public class YingZi : CustomCardModel
 {
-    // »ù´¡ºÄÄÜ
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(YingZi)}.mp3";
+    // åŸºç¡€è€—èƒ½
     private const int energyCost = 1;
-    // ¿¨ÅÆÀàĞÍ
+    // å¡ç‰Œç±»å‹
     private const CardType type = CardType.Power;
-    // ¿¨ÅÆÏ¡ÓĞ¶È
+    // å¡ç‰Œç¨€æœ‰åº¦
     private const CardRarity rarity = CardRarity.Common;
-    // Ä¿±êÀàĞÍ£¨AnyEnemy±íÊ¾ÈÎÒâµĞÈË£©
+    // ç›®æ ‡ç±»å‹ï¼ˆAnyEnemyè¡¨ç¤ºä»»æ„æ•Œäººï¼‰
     private const TargetType targetType = TargetType.Self;
-    // ÊÇ·ñÔÚ¿¨ÅÆÍ¼¼øÖĞÏÔÊ¾
+    // æ˜¯å¦åœ¨å¡ç‰Œå›¾é‰´ä¸­æ˜¾ç¤º
     private const bool shouldShowInCardLibrary = true;
 
-    // ¿¨ÅÆµÄ»ù´¡ÊôĞÔ
+    // å¡ç‰Œçš„åŸºç¡€å±æ€§
 
     public override string PortraitPath => $"res://slay_the_spire_2_three_kingdoms/images/cards/{nameof(YingZi)}.png";
 
     public YingZi() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
-    // ´ò³öÊ±µÄĞ§¹ûÂß¼­
+    // æ‰“å‡ºæ—¶çš„æ•ˆæœé€»è¾‘
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         await PowerCmd.Apply<YingZiPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
 
-    // Éı¼¶ºóµÄĞ§¹ûÂß¼­
+    // å‡çº§åçš„æ•ˆæœé€»è¾‘
     protected override void OnUpgrade()
     {
         AddKeyword(CardKeyword.Innate);

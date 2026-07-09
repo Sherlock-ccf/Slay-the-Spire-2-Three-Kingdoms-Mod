@@ -10,11 +10,13 @@ using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using slay_the_spire_2_three_kingdoms.KeyWords;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class JiMie : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(JiMie)}.mp3";
     private const int energyCost = 0;
     private const CardType type = CardType.Attack;
     private const CardRarity rarity = CardRarity.Ancient;
@@ -33,6 +35,7 @@ public class JiMie : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         if (cardPlay.Target != null)
         {
             await DamageCmd.Attack(cardPlay.Target.MaxHp)

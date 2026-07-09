@@ -42,15 +42,18 @@ public class DangGuPower : CustomPowerModel
             GetInternalData<Data>().LastTurn--;
             DynamicVars["LastTurn"].BaseValue--;
             await PlayerCmd.GainEnergy(Amount, player);
-            CardModel? cardModel = CardFactory.GetDistinctForCombat
+            for (int i = 1; i <= Amount; i++)
+            {
+                CardModel? cardModel = CardFactory.GetDistinctForCombat
                 (Owner.Player, from c in Owner.Player.Character.CardPool.GetUnlockedCards
                     (Owner.Player.UnlockState, Owner.Player.RunState.CardMultiplayerConstraint)
                                where c.Type == CardType.Power
-                               select c, Amount, Owner.Player.RunState.Rng.CombatCardGeneration).FirstOrDefault();
-            if (cardModel != null)
-            {
-                cardModel.SetToFreeThisCombat();
-                await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, Owner.Player);
+                               select c, 1, Owner.Player.RunState.Rng.CombatCardGeneration).FirstOrDefault();
+                if (cardModel != null)
+                {
+                    cardModel.SetToFreeThisCombat();
+                    await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, Owner.Player);
+                }
             }
         }
     }

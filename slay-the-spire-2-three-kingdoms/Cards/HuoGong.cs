@@ -8,11 +8,13 @@ using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.ValueProps;
 using slay_the_spire_2_three_kingdoms.KeyWords;
 using slay_the_spire_2_three_kingdoms.Character;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class HuoGong : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(HuoGong)}.mp3";
     private const int energyCost = 0;
     private const CardType type = CardType.Attack;
     private const CardRarity rarity = CardRarity.Uncommon;
@@ -28,6 +30,7 @@ public class HuoGong : CustomCardModel
     public override IEnumerable<CardKeyword> CanonicalKeywords => new List<CardKeyword> { TkKeywords.Fire };
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         await CardCmd.Discard(choiceContext, await CardSelectCmd.FromHandForDiscard(choiceContext, Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, 1), null, this));
         if (cardPlay.Target != null)
         {

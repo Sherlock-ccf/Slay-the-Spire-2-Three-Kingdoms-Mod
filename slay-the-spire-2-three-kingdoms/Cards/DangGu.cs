@@ -8,11 +8,13 @@ using slay_the_spire_2_three_kingdoms.Character;
 using slay_the_spire_2_three_kingdoms.Powers;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Entities.Players;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class DangGu : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(DangGu)}.mp3";
     private const int energyCost = 0;
     private const CardType type = CardType.Power;
     private const CardRarity rarity = CardRarity.Rare;
@@ -28,6 +30,7 @@ public class DangGu : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         if (Owner.HasPower<DangGuPower>())
         {
             return;

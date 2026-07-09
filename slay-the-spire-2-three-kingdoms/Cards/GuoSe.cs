@@ -6,11 +6,13 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using slay_the_spire_2_three_kingdoms.Character;
 using MegaCrit.Sts2.Core.HoverTips;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class GuoSe : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(GuoSe)}.mp3";
     private const int energyCost = 0;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Common;
@@ -23,6 +25,7 @@ public class GuoSe : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         await CardCmd.Discard(choiceContext, PileType.Hand.GetPile(Owner).Cards);
         if (Owner.PlayerCombatState != null && CombatState != null)
         {

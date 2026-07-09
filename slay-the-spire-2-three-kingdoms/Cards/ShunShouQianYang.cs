@@ -7,24 +7,26 @@ using slay_the_spire_2_three_kingdoms.Character;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models.Powers;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
-// ¼ÓÈëÄÄ¸ö¿¨³Ø
+// åŠ å…¥å“ªä¸ªå¡æ± 
 [Pool(typeof(TkCardPool))]
 public class ShunShouQianYang : CustomCardModel
 {
-    // »ù´¡ºÄÄÜ
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(ShunShouQianYang)}.mp3";
+    // åŸºç¡€è€—èƒ½
     private const int energyCost = 0;
-    // ¿¨ÅÆÀàĞÍ
+    // å¡ç‰Œç±»å‹
     private const CardType type = CardType.Skill;
-    // ¿¨ÅÆÏ¡ÓĞ¶È
+    // å¡ç‰Œç¨€æœ‰åº¦
     private const CardRarity rarity = CardRarity.Uncommon;
-    // Ä¿±êÀàĞÍ£¨AnyEnemy±íÊ¾ÈÎÒâµĞÈË£©
+    // ç›®æ ‡ç±»å‹ï¼ˆAnyEnemyè¡¨ç¤ºä»»æ„æ•Œäººï¼‰
     private const TargetType targetType = TargetType.AnyEnemy;
-    // ÊÇ·ñÔÚ¿¨ÅÆÍ¼¼øÖĞÏÔÊ¾
+    // æ˜¯å¦åœ¨å¡ç‰Œå›¾é‰´ä¸­æ˜¾ç¤º
     private const bool shouldShowInCardLibrary = true;
 
-    // ¿¨ÅÆµÄ»ù´¡ÊôĞÔ
+    // å¡ç‰Œçš„åŸºç¡€å±æ€§
 
     public override string PortraitPath => $"res://slay_the_spire_2_three_kingdoms/images/cards/{nameof(ShunShouQianYang)}.png";
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -36,9 +38,10 @@ public class ShunShouQianYang : CustomCardModel
     public ShunShouQianYang() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
-    // ´ò³öÊ±µÄĞ§¹ûÂß¼­
+    // æ‰“å‡ºæ—¶çš„æ•ˆæœé€»è¾‘
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         if (cardPlay.Target != null)
         {
             await PowerCmd.Apply<StrengthPower>(choiceContext, cardPlay.Target, -DynamicVars["StrengthLoss"].BaseValue, Owner.Creature, this);
@@ -46,7 +49,7 @@ public class ShunShouQianYang : CustomCardModel
         await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, DynamicVars["StrengthGet"].BaseValue, Owner.Creature, this);
     }
 
-    // Éı¼¶ºóµÄĞ§¹ûÂß¼­
+    // å‡çº§åçš„æ•ˆæœé€»è¾‘
     protected override void OnUpgrade()
     {
         DynamicVars["StrengthLoss"].UpgradeValueBy(1m);

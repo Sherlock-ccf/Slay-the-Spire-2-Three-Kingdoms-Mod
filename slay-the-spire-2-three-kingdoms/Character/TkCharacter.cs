@@ -88,7 +88,6 @@ public class TkCharacter : PlaceholderCharacterModel
         ModelDb.Card<Shan>(),
         ModelDb.Card<Shan>(),
         ModelDb.Card<Shan>(),
-        ModelDb.Card<Shan>(),
         ModelDb.Card<Tao>(),
         ModelDb.Card<Jiu>(),
     ];

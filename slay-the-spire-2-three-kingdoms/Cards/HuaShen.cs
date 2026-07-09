@@ -6,21 +6,23 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Factories;
 using slay_the_spire_2_three_kingdoms.Character;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
-// ¼ÓÈëÄÄ¸ö¿¨³Ø
+// åŠ å…¥å“ªä¸ªå¡æ± 
 [Pool(typeof(TkCardPool))]
 public class HuaShen : CustomCardModel
 {
-    // »ù´¡ºÄÄÜ
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(HuaShen)}.mp3";
+    // åŸºç¡€è€—èƒ½
     private const int energyCost = 1;
-    // ¿¨ÅÆÀàĞÍ
+    // å¡ç‰Œç±»å‹
     private const CardType type = CardType.Skill;
-    // ¿¨ÅÆÏ¡ÓĞ¶È
+    // å¡ç‰Œç¨€æœ‰åº¦
     private const CardRarity rarity = CardRarity.Uncommon;
-    // Ä¿±êÀàĞÍ£¨AnyEnemy±íÊ¾ÈÎÒâµĞÈË£©
+    // ç›®æ ‡ç±»å‹ï¼ˆAnyEnemyè¡¨ç¤ºä»»æ„æ•Œäººï¼‰
     private const TargetType targetType = TargetType.Self;
-    // ÊÇ·ñÔÚ¿¨ÅÆÍ¼¼øÖĞÏÔÊ¾
+    // æ˜¯å¦åœ¨å¡ç‰Œå›¾é‰´ä¸­æ˜¾ç¤º
     private const bool shouldShowInCardLibrary = true;
     public override IEnumerable<CardKeyword> CanonicalKeywords => new List<CardKeyword> { CardKeyword.Exhaust };
     public override string PortraitPath => $"res://slay_the_spire_2_three_kingdoms/images/cards/{nameof(HuaShen)}.png";
@@ -29,9 +31,10 @@ public class HuaShen : CustomCardModel
     {
     }
 
-    // ´ò³öÊ±µÄĞ§¹ûÂß¼­
+    // æ‰“å‡ºæ—¶çš„æ•ˆæœé€»è¾‘
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         CardModel? cardModel = CardFactory.GetDistinctForCombat
         (Owner, from c in Owner.Character.CardPool.GetUnlockedCards

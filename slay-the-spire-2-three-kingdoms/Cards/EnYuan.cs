@@ -7,11 +7,13 @@ using slay_the_spire_2_three_kingdoms.Character;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.HoverTips;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class EnYuan : CustomCardModel
 {
+    public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(EnYuan)}.mp3";
     private const int energyCost = 1;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Common;
@@ -31,7 +33,8 @@ public class EnYuan : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, DynamicVars["ThornsPowerGet"].BaseValue, Owner.Creature, this);
+        CardPlayer.PlayCardSfx(SfxPath);
+        await PowerCmd.Apply<ThornsPower>(choiceContext, Owner.Creature, DynamicVars["ThornsPowerGet"].BaseValue, Owner.Creature, this);
     }
     protected override void OnUpgrade()
     {

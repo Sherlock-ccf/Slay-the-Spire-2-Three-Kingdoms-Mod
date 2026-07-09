@@ -8,11 +8,13 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using slay_the_spire_2_three_kingdoms.Character;
 using slay_the_spire_2_three_kingdoms.Powers;
 using MegaCrit.Sts2.Core.HoverTips;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class JieYing : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(JieYing)}.mp3";
     private const int energyCost = 2;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Rare;
@@ -31,6 +33,7 @@ public class JieYing : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         if (cardPlay.Target == null)
         {
             return;

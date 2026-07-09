@@ -13,11 +13,13 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using slay_the_spire_2_three_kingdoms.Character;
 using MegaCrit.Sts2.Core.HoverTips;
 using slay_the_spire_2_three_kingdoms.KeyWords;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class YeYan : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(YeYan)}.mp3";
     private const int energyCost = 1;
     private const CardType type = CardType.Attack;
     private const CardRarity rarity = CardRarity.Uncommon;
@@ -37,6 +39,7 @@ public class YeYan : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
         await DamageCmd.Attack(DynamicVars.CalculatedDamage)
         .FromCard(this)

@@ -8,24 +8,26 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
-// ¼ÓÈëÄÄ¸ö¿¨³Ø
+// åŠ å…¥å“ªä¸ªå¡æ± 
 [Pool(typeof(TkCardPool))]
 public class TuXi : CustomCardModel
 {
-    // »ù´¡ºÄÄÜ
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(TuXi)}.mp3";
+    // åŸºç¡€è€—èƒ½
     private const int energyCost = 0;
-    // ¿¨ÅÆÀàĞÍ
+    // å¡ç‰Œç±»å‹
     private const CardType type = CardType.Skill;
-    // ¿¨ÅÆÏ¡ÓĞ¶È
+    // å¡ç‰Œç¨€æœ‰åº¦
     private const CardRarity rarity = CardRarity.Common;
-    // Ä¿±êÀàĞÍ£¨AnyEnemy±íÊ¾ÈÎÒâµĞÈË£©
+    // ç›®æ ‡ç±»å‹ï¼ˆAnyEnemyè¡¨ç¤ºä»»æ„æ•Œäººï¼‰
     private const TargetType targetType = TargetType.AllEnemies;
-    // ÊÇ·ñÔÚ¿¨ÅÆÍ¼¼øÖĞÏÔÊ¾
+    // æ˜¯å¦åœ¨å¡ç‰Œå›¾é‰´ä¸­æ˜¾ç¤º
     private const bool shouldShowInCardLibrary = true;
 
-    // ¿¨ÅÆµÄ»ù´¡ÊôĞÔ
+    // å¡ç‰Œçš„åŸºç¡€å±æ€§
 
     public override string PortraitPath => $"res://slay_the_spire_2_three_kingdoms/images/cards/{nameof(TuXi)}.png";
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -34,9 +36,10 @@ public class TuXi : CustomCardModel
     public TuXi() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
-    // ´ò³öÊ±µÄĞ§¹ûÂß¼­
+    // æ‰“å‡ºæ—¶çš„æ•ˆæœé€»è¾‘
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         await CardCmd.Discard(choiceContext, await CardSelectCmd.FromHandForDiscard(choiceContext, Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, 2), null, this));
         if (CombatState != null)
         {
@@ -48,7 +51,7 @@ public class TuXi : CustomCardModel
         }
     }
 
-    // Éı¼¶ºóµÄĞ§¹ûÂß¼­
+    // å‡çº§åçš„æ•ˆæœé€»è¾‘
     protected override void OnUpgrade()
     {
         DynamicVars["StrengthLoss"].UpgradeValueBy(1m);

@@ -7,11 +7,13 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using slay_the_spire_2_three_kingdoms.Character;
 using slay_the_spire_2_three_kingdoms.KeyWords;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class HuoJi : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(HuoJi)}.mp3";
     private const int energyCost = 1;
     private const CardType type = CardType.Attack;
     private decimal _extraDamageFromPlays;
@@ -41,6 +43,7 @@ public class HuoJi : CustomCardModel
     ];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         if (CombatState == null)
         {
             return;

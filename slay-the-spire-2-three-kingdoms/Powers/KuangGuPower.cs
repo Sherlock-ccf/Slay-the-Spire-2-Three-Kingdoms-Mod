@@ -29,7 +29,7 @@ public class KuangGuPower : CustomPowerModel
             return;
         }
         CardModel card = cardPlay.Card;
-        if (card is Sha)
+        if (card is Sha || card is HuoSha)
         {
             await PowerCmd.Apply<StrengthPower>(context, Owner, 1, Owner, null, silent: true);
             DynamicVars["StrengthGet"].BaseValue++;

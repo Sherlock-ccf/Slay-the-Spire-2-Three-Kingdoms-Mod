@@ -12,8 +12,8 @@
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QIN_ZHENG_POWER.description": "每当你打出第3，5，8张牌后，抽一张牌。",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QIN_ZHENG_POWER.smartDescription": "每当你打出第3，5，8张牌后，抽一张牌。\n已经打出了[blue]{CardsPlayed:diff()}[/blue]张牌。",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QIN_ZHENG_POWER.title": "勤政",
-    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KUANG_GU_POWER.description": "本回合，每当你打出一张攻击牌，获得{energyPrefix:energyIcons(1)}，抽一张牌，获得一点力量。",
-    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KUANG_GU_POWER.smartDescription": "本回合，每当你打出一张攻击牌，获得{energyPrefix:energyIcons(1)}，抽一张牌，获得一点力量,回复一点生命值。\n本回合已经获得了{StrengthGet:diff()}点力量。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KUANG_GU_POWER.description": "本回合，每当你打出一张杀或火杀，获得{energyPrefix:energyIcons(1)}，抽一张牌，获得一点力量。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KUANG_GU_POWER.smartDescription": "本回合，每当你打出一张杀或火杀，获得{energyPrefix:energyIcons(1)}，抽一张牌，获得一点力量,回复一点生命值。\n本回合已经获得了{StrengthGet:diff()}点力量。",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KUANG_GU_POWER.title": "狂骨",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YING_ZI_POWER.description": "你的回合开始时，额外抽一张牌。",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YING_ZI_POWER.smartDescription": "你的回合开始时，额外抽一张牌。",
@@ -51,32 +51,28 @@
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-DANG_GU_POWER.title": "党锢",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-DANG_GU_POWER.description": "每个回合开始时，获得{energyPrefix:energyIcons(1)}，获得[blue]1[/blue]张随机能力牌，并在本场战斗耗能为0。\n[blue]5回合后死亡。[/blue]",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-DANG_GU_POWER.smartDescription": "每个回合开始时，获得{energyPrefix:energyIcons(1)}，获得[blue]1[/blue]张随机能力牌，并在本场战斗耗能为0。\n[blue]{LastTurn:diff()}回合后死亡。[/blue]",
-
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YAN_CE_POWER.title": "演策",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YAN_CE_POWER.description": "随机预测你接下来打出的3张牌的类型，每打出1张与预测类型相同的牌，抽1张牌；当你打出三张牌后，根据预测正确的数量：0：失去6点生命值；1：弃2张牌；2：抽1张牌；3：抽3张牌。",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YAN_CE_POWER.smartDescription": "你接下来应该打出的牌类型是[blue]{NextCardOne:cond:==0?攻击牌|技能牌}-{NextCardTwo:cond:==0?攻击牌|技能牌}-{NextCardThree:cond:==0?攻击牌|技能牌}[/blue]，[blue]你下一张打出的牌应该是{Next:cond:==0?攻击牌|技能牌}[/blue]。你已经正确演策[blue]{CorrectNumber:diff()}[/blue]张牌。",
-
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LIAN_HUAN_POWER.title": "连环",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LIAN_HUAN_POWER.description": "传导属性伤害。",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-LIAN_HUAN_POWER.smartDescription": "传导属性伤害。",
-
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-CHENG_HAO_POWER.title": "称好",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-CHENG_HAO_POWER.description": "每当对[gold]连环[/gold]状态的敌人造成[gold]属性伤害[/gold]时，抽1张牌",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-CHENG_HAO_POWER.smartDescription": "每当对[gold]连环[/gold]状态的敌人造成[gold]属性伤害[/gold]时，抽1张牌",
-
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YING_POWER.title": "营",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YING_POWER.description": "下个回合开始时，被夺取所有力量。",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-YING_POWER.smartDescription": "下个回合开始时，被夺取所有力量。",
-
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIE_YING_POWER.title": "劫营",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIE_YING_POWER.description": "下个回合开始时，夺取所有拥有营标记的敌人的力量。",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-JIE_YING_POWER.smartDescription": "下个回合开始时，夺取所有拥有营标记的敌人的力量。",
-
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QING_DAO_POWER.title": "清蹈",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QING_DAO_POWER.description": "本回合内若受到伤害，手牌加入1张闪，若没有受到伤害，手牌上限+1。",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QING_DAO_POWER.smartDescription": "本回合内若受到伤害，手牌加入1张闪，若没有受到伤害，手牌上限+1。",
-
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KANG_KAI_POWER.title": "慷慨",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KANG_KAI_POWER.description": "每当失去生命后，获得1点格挡。",
-    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KANG_KAI_POWER.smartDescription": "每当失去生命后，获得1点格挡。"
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-KANG_KAI_POWER.smartDescription": "每当失去生命后，获得1点格挡。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-RAN_POWER.title": "燃",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-RAN_POWER.description": "每个回合开始时，失去1点生命。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-RAN_POWER.smartDescription": "每个回合开始时，失去1点生命。"
 }

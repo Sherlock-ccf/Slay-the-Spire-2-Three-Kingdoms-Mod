@@ -5,11 +5,13 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using slay_the_spire_2_three_kingdoms.Character;
 using slay_the_spire_2_three_kingdoms.Powers;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class JianXiong : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(JianXiong)}.mp3";
     private const int energyCost = 1;
     private const CardType type = CardType.Power;
     private const CardRarity rarity = CardRarity.Uncommon;
@@ -19,9 +21,10 @@ public class JianXiong : CustomCardModel
     public JianXiong() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
-    // 打出时的效果逻辑
+    // 鎵撳嚭鏃剁殑鏁堟灉閫昏緫
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         await PowerCmd.Apply<JianXiongPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
     protected override void OnUpgrade()

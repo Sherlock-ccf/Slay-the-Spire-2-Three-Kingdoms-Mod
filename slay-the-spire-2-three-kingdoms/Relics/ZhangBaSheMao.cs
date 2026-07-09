@@ -23,7 +23,7 @@ public class ZhangBaSheMao : CustomRelicModel
         {
             await CardPileCmd.RemoveFromDeck(item);
         }
-        CardModel card = ModelDb.Card<Sha>();
+        CardModel card = Owner.RunState.CreateCard(ModelDb.Card<Sha>(), Owner);
         CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
     }
 }

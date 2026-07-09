@@ -8,11 +8,13 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.HoverTips;
 using slay_the_spire_2_three_kingdoms.Character;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class ShenZhu : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(ShenZhu)}.mp3";
     private const int energyCost = 0;
     private const CardType type = CardType.Attack;
     private const CardRarity rarity = CardRarity.Uncommon;
@@ -33,6 +35,7 @@ public class ShenZhu : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         List<CardModel> enumerable = PileType.Hand.GetPile(Owner).Cards.Where((CardModel c) => c is Sha).ToList();
         if (enumerable.Count() != 0)
         {

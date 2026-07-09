@@ -18,5 +18,25 @@
 
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHANG_BA_SHE_MAO.title": "丈八蛇矛",
     "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHANG_BA_SHE_MAO.description": "拾起时，移除两张牌，将1张杀加入你的牌组。",
-    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHANG_BA_SHE_MAO.flavor": "丈八蛇矛"
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHANG_BA_SHE_MAO.flavor": "丈八蛇矛",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-GU_DING_DAO.title": "古锭刀",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-GU_DING_DAO.description": "对拥有虚弱的敌人造成的伤害+3。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-GU_DING_DAO.flavor": "古锭刀",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHU_QUE_YU_SHAN.title": "朱雀羽扇",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHU_QUE_YU_SHAN.description": "拾取时，将所有杀变化为火杀。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-ZHU_QUE_YU_SHAN.flavor": "朱雀羽扇",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QI_LIN_GONG.title": "麒麟弓",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QI_LIN_GONG.description": "每当你突破敌人的[gold]格挡[/gold]时，给予其2层[gold]虚弱[/gold]。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-QI_LIN_GONG.flavor": "麒麟弓",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-FANG_TIAN_HUA_JI.title": "方天画戟",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-FANG_TIAN_HUA_JI.description": "你的[gold]杀[/gold]和[gold]火杀[/gold]改为对所有敌人生效。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-FANG_TIAN_HUA_JI.flavor": "方天画戟",
+
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TENG_JIA.title": "藤甲",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TENG_JIA.description": "你造成的[gold]属性伤害[/gold]+4。",
+    "SLAY_THE_SPIRE_2_THREE_KINGDOMS-TENG_JIA.flavor": "藤甲"
 }

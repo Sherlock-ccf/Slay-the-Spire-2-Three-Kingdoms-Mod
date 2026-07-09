@@ -6,11 +6,13 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using slay_the_spire_2_three_kingdoms.Powers;
 using slay_the_spire_2_three_kingdoms.Character;
 using MegaCrit.Sts2.Core.CardSelection;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
 [Pool(typeof(TkCardPool))]
 public class QueDi : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(QueDi)}.mp3";
     private const int energyCost = 0;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Rare;
@@ -22,6 +24,7 @@ public class QueDi : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         await CreatureCmd.LoseMaxHp(choiceContext, Owner.Creature, 3m, isFromCard: true);
         if (IsUpgraded)
         {

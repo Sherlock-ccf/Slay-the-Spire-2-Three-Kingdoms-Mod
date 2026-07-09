@@ -6,14 +6,17 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using slay_the_spire_2_three_kingdoms.KeyWords;
+using slay_the_spire_2_three_kingdoms.Relics;
 using slay_the_spire_2_three_kingdoms.Character;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
-// 加入哪个卡池
+// 鍔犲叆鍝釜鍗℃睜
 [Pool(typeof(TkCardPool))]
 public class HuoSha : CustomCardModel
 {
-    private const int energyCost = 0;
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(HuoSha)}.mp3";
+    private const int energyCost = 1;
     private const CardType type = CardType.Attack;
     private const CardRarity rarity = CardRarity.Token;
     private const TargetType targetType = TargetType.AnyEnemy;
@@ -30,7 +33,20 @@ public class HuoSha : CustomCardModel
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Target != null)
+        if(CombatState==null)
+        {
+            return;
+        }
+        CardPlayer.PlayCardSfx(SfxPath);
+        FangTianHuaJi? HasF = Owner.Relics.OfType<FangTianHuaJi>().FirstOrDefault();
+        if (cardPlay.Target != null && HasF != null)
+        {
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .FromCard(this)
+            .TargetingAllOpponents(CombatState)
+            .Execute(choiceContext);
+        }
+        else if (cardPlay.Target != null)
         {
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
@@ -39,7 +55,7 @@ public class HuoSha : CustomCardModel
         }
     }
 
-    // 升级后的效果逻辑
+    // 鍗囩骇鍚庣殑鏁堟灉閫昏緫
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3);

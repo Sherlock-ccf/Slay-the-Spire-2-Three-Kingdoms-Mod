@@ -8,21 +8,23 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
 using slay_the_spire_2_three_kingdoms.Character;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
-// ¼ÓÈëÄÄ¸ö¿¨³Ø
+// åŠ å…¥å“ªä¸ªå¡æ± 
 [Pool(typeof(TkCardPool))]
 public class LieGong : CustomCardModel
 {
-    // »ù´¡ºÄÄÜ
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(LieGong)}.mp3";
+    // åŸºç¡€è€—èƒ½
     private const int energyCost = 1;
-    // ¿¨ÅÆÀàĞÍ
+    // å¡ç‰Œç±»å‹
     private const CardType type = CardType.Attack;
-    // ¿¨ÅÆÏ¡ÓĞ¶È
+    // å¡ç‰Œç¨€æœ‰åº¦
     private const CardRarity rarity = CardRarity.Common;
-    // Ä¿±êÀàĞÍ£¨AnyEnemy±íÊ¾ÈÎÒâµĞÈË£©
+    // ç›®æ ‡ç±»å‹ï¼ˆAnyEnemyè¡¨ç¤ºä»»æ„æ•Œäººï¼‰
     private const TargetType targetType = TargetType.AnyEnemy;
-    // ÊÇ·ñÔÚ¿¨ÅÆÍ¼¼øÖĞÏÔÊ¾
+    // æ˜¯å¦åœ¨å¡ç‰Œå›¾é‰´ä¸­æ˜¾ç¤º
     private const bool shouldShowInCardLibrary = true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Move)];
@@ -33,20 +35,21 @@ public class LieGong : CustomCardModel
     {
     }
 
-    // ´ò³öÊ±µÄĞ§¹ûÂß¼­
+    // æ‰“å‡ºæ—¶çš„æ•ˆæœé€»è¾‘
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         if (cardPlay.Target != null)
         {
             int HitCount = (cardPlay.Target.CurrentHp >= Owner.Creature.CurrentHp) ? 2 : 1;
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount(HitCount)
-            .FromCard(this) // ÉËº¦À´Ô´ÓÚÕâÕÅ¿¨ÅÆ
-            .Targeting(cardPlay.Target) // ÉËº¦Ä¿±êÊÇÍæ¼ÒÑ¡ÔñµÄÄ¿±ê
+            .FromCard(this) // ä¼¤å®³æ¥æºäºè¿™å¼ å¡ç‰Œ
+            .Targeting(cardPlay.Target) // ä¼¤å®³ç›®æ ‡æ˜¯ç©å®¶é€‰æ‹©çš„ç›®æ ‡
             .Execute(choiceContext);
         }
     }
 
-    // Éı¼¶ºóµÄĞ§¹ûÂß¼­
+    // å‡çº§åçš„æ•ˆæœé€»è¾‘
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(2);

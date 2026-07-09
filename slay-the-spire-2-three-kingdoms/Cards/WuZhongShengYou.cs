@@ -7,24 +7,26 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
 using slay_the_spire_2_three_kingdoms.Character;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
-// ¼ÓÈëÄÄ¸ö¿¨³Ø
+// åŠ å…¥å“ªä¸ªå¡æ± 
 [Pool(typeof(TkCardPool))]
 public class WuZhongShengYou : CustomCardModel
 {
-    // »ù´¡ºÄÄÜ
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(WuZhongShengYou)}.mp3";
+    // åŸºç¡€è€—èƒ½
     private const int energyCost = 0;
-    // ¿¨ÅÆÀàĞÍ
+    // å¡ç‰Œç±»å‹
     private const CardType type = CardType.Skill;
-    // ¿¨ÅÆÏ¡ÓĞ¶È
+    // å¡ç‰Œç¨€æœ‰åº¦
     private const CardRarity rarity = CardRarity.Uncommon;
-    // Ä¿±êÀàĞÍ£¨AnyEnemy±íÊ¾ÈÎÒâµĞÈË£©
+    // ç›®æ ‡ç±»å‹ï¼ˆAnyEnemyè¡¨ç¤ºä»»æ„æ•Œäººï¼‰
     private const TargetType targetType = TargetType.Self;
-    // ÊÇ·ñÔÚ¿¨ÅÆÍ¼¼øÖĞÏÔÊ¾
+    // æ˜¯å¦åœ¨å¡ç‰Œå›¾é‰´ä¸­æ˜¾ç¤º
     private const bool shouldShowInCardLibrary = true;
 
-    // ¿¨ÅÆµÄ»ù´¡ÊôĞÔ
+    // å¡ç‰Œçš„åŸºç¡€å±æ€§
     protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(2)];
 
     public override string PortraitPath => $"res://slay_the_spire_2_three_kingdoms/images/cards/{nameof(WuZhongShengYou)}.png";
@@ -32,13 +34,14 @@ public class WuZhongShengYou : CustomCardModel
     public WuZhongShengYou() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
-    // ´ò³öÊ±µÄĞ§¹ûÂß¼­
+    // æ‰“å‡ºæ—¶çš„æ•ˆæœé€»è¾‘
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
     }
 
-    // Éı¼¶ºóµÄĞ§¹ûÂß¼­
+    // å‡çº§åçš„æ•ˆæœé€»è¾‘
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1m);

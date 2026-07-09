@@ -9,38 +9,41 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models.Relics;
 using slay_the_spire_2_three_kingdoms.Character;
 using HarmonyLib;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
-// ¼ÓÈëÄÄ¸ö¿¨³Ø
+// åŠ å…¥å“ªä¸ªå¡æ± 
 [Pool(typeof(TkCardPool))]
 public class YingJia : CustomCardModel
 {
-    // »ù´¡ºÄÄÜ
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(YingJia)}.mp3";
+    // åŸºç¡€è€—èƒ½
     private const int energyCost = 0;
-    // ¿¨ÅÆÀàĞÍ
+    // å¡ç‰Œç±»å‹
     private const CardType type = CardType.Skill;
-    // ¿¨ÅÆÏ¡ÓĞ¶È
+    // å¡ç‰Œç¨€æœ‰åº¦
     private const CardRarity rarity = CardRarity.Rare;
-    // Ä¿±êÀàĞÍ£¨AnyEnemy±íÊ¾ÈÎÒâµĞÈË£©
+    // ç›®æ ‡ç±»å‹ï¼ˆAnyEnemyè¡¨ç¤ºä»»æ„æ•Œäººï¼‰
     private const TargetType targetType = TargetType.Self;
-    // ÊÇ·ñÔÚ¿¨ÅÆÍ¼¼øÖĞÏÔÊ¾
+    // æ˜¯å¦åœ¨å¡ç‰Œå›¾é‰´ä¸­æ˜¾ç¤º
     private const bool shouldShowInCardLibrary = true;
     public override string PortraitPath => $"res://slay_the_spire_2_three_kingdoms/images/cards/{nameof(YingJia)}.png";
     public override IEnumerable<CardKeyword> CanonicalKeywords => new List<CardKeyword> { CardKeyword.Exhaust };
-    private bool _hasExtraTurn;       // ÊÇ·ñÓµÓĞ¡°¶îÍâ»ØºÏ¡±
-    private bool _paelsEyeWasAlreadyUsed; // Åå¶ûÖ®ÑÛÊÇ·ñÒÑ¾­ÓÃ¹ı
+    private bool _hasExtraTurn;       // æ˜¯å¦æ‹¥æœ‰â€œé¢å¤–å›åˆâ€
+    private bool _paelsEyeWasAlreadyUsed; // ä½©å°”ä¹‹çœ¼æ˜¯å¦å·²ç»ç”¨è¿‡
 
     public YingJia() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
 
-    // ´ò³öÊ±µÄĞ§¹ûÂß¼­
+    // æ‰“å‡ºæ—¶çš„æ•ˆæœé€»è¾‘
     public override bool ShouldTakeExtraTurn(Player player)
     {
         return _hasExtraTurn && player == ((CardModel)(object)this).Owner;
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         await CardCmd.Discard(choiceContext, await CardSelectCmd.FromHandForDiscard(choiceContext, Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, 2), null, this));
         _hasExtraTurn = true;
         PaelsEye? paelsEye = Owner.Relics.OfType<PaelsEye>().FirstOrDefault();

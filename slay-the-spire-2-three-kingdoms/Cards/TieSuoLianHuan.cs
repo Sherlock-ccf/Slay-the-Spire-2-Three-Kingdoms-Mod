@@ -7,12 +7,14 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using slay_the_spire_2_three_kingdoms.Character;
 using slay_the_spire_2_three_kingdoms.Powers;
 using MegaCrit.Sts2.Core.HoverTips;
+using slay_the_spire_2_three_kingdoms.Node;
 namespace slay_the_spire_2_three_kingdoms.Cards;
 
-// 加入哪个卡池
+// 鍔犲叆鍝釜鍗℃睜
 [Pool(typeof(TkCardPool))]
 public class TieSuoLianHuan : CustomCardModel
 {
+	public string SfxPath => $"res://slay_the_spire_2_three_kingdoms/sfx/{nameof(TieSuoLianHuan)}.mp3";
     private const int energyCost = 0;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Uncommon;
@@ -25,9 +27,10 @@ public class TieSuoLianHuan : CustomCardModel
     public TieSuoLianHuan() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
-    // 打出时的效果逻辑
+    // 鎵撳嚭鏃剁殑鏁堟灉閫昏緫
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+		CardPlayer.PlayCardSfx(SfxPath);
         if (CombatState == null)
         {
             return;
