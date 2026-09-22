@@ -1,0 +1,66 @@
+using BaseLib.Abstracts;
+using BaseLib.Utils;
+using MegaCrit.Sts2.Core.CardSelection;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using Three_Kingdoms.KeyWords;
+using Three_Kingdoms.Character;
+using Three_Kingdoms.Node;
+using Three_Kingdoms.Cards.Basic;
+namespace Three_Kingdoms.Cards.Uncommon;
+
+[Pool(typeof(TkCardPool))]
+public class XueHen : CustomCardModel
+{
+	public string SfxPath => $"res://Three_Kingdoms/sfx/{nameof(XueHen)}.mp3";
+    private const int energyCost = 2;
+    private const CardType type = CardType.Attack;
+    private const CardRarity rarity = CardRarity.Uncommon;
+    private const TargetType targetType = TargetType.AnyEnemy;
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6, ValueProp.Move)];
+    private const bool shouldShowInCardLibrary = true;
+    public override IEnumerable<CardKeyword> CanonicalKeywords => new List<CardKeyword> { CardKeyword.Exhaust, TkKeywords.Fire };
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => new List<IHoverTip> { HoverTipFactory.FromCard<Sha>(IsUpgraded) };
+    public override string PortraitPath => $"res://Three_Kingdoms/images/cards/{nameof(XueHen)}.png";
+
+    public XueHen() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+    {
+    }
+
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+		CardPlayer.PlayCardSfx(SfxPath);
+        if (cardPlay.Target == null)
+        {
+            return;
+        }
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+        .FromCard(this)
+        .Targeting(cardPlay.Target)
+        .Execute(choiceContext);
+        List<CardModel> list = (await CardSelectCmd.FromHand(prefs: new CardSelectorPrefs(SelectionScreenPrompt, 0, 999999999), context: choiceContext, player: Owner, filter: null, source: this)).ToList();
+        foreach (CardModel item in list)
+        {
+            if (CombatState != null)
+            {
+                CardModel cardModel = CombatState.CreateCard<Sha>(Owner);
+                if (IsUpgraded)
+                {
+                    CardCmd.Upgrade(cardModel);
+                }
+                cardModel.AddKeyword(CardKeyword.Exhaust);
+                cardModel.SetToFreeThisTurn();
+                await CardCmd.Transform(item, cardModel);
+            }
+        }
+    }
+    protected override void OnUpgrade()
+    {
+        DynamicVars.Damage.UpgradeValueBy(3);
+    }
+}

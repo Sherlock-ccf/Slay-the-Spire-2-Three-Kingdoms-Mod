@@ -1,0 +1,35 @@
+using BaseLib.Abstracts;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.Entities.Players;
+using Three_Kingdoms.Cards.Basic;
+namespace Three_Kingdoms.Powers;
+
+
+public class JueJinPower : CustomPowerModel
+{
+    public override PowerType Type => PowerType.Buff;
+    public override PowerStackType StackType => PowerStackType.Single;
+
+    public override string? CustomPackedIconPath => "res://Three_Kingdoms/images/powers/JueJin.png";
+    public override string? CustomBigIconPath => "res://Three_Kingdoms/images/powers/JueJin.png";
+
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        if (player == Owner.Player)
+        {
+            CardModel cardModel = CombatState.CreateCard<Jiu>(Owner.Player);
+            CardCmd.ApplyKeyword(cardModel, CardKeyword.Exhaust);
+            CardCmd.ApplyKeyword(cardModel, CardKeyword.Ethereal);
+            cardModel.SetToFreeThisCombat();
+
+            if (Owner.Player.PlayerCombatState != null)
+            {
+                await CardPileCmd.AddGeneratedCardToCombat(cardModel, Owner.Player.PlayerCombatState.Hand.Type, Owner.Player);
+            }
+        }
+    }
+}

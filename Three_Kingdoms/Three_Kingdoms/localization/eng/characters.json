@@ -1,0 +1,17 @@
+{
+    "THREE_KINGDOMS-TK_CHARACTER.title": "Three Kingdoms",
+    "THREE_KINGDOMS-TK_CHARACTER.description": "A being in endless waiting.\nTo [gold]Three Kingdoms[/gold], time is but another form of eternity.",
+    "THREE_KINGDOMS-TK_CHARACTER.aromaPrinciple": "[sine][blue]...waiting...[/blue][/sine]",
+    "THREE_KINGDOMS-TK_CHARACTER.cardsModifierDescription": "Three Kingdoms cards now appear in rewards and shops.",
+    "THREE_KINGDOMS-TK_CHARACTER.cardsModifierTitle": "Three Kingdoms Cards",
+    "THREE_KINGDOMS-TK_CHARACTER.eventDeathPrevention": "I must keep waiting...",
+    "THREE_KINGDOMS-TK_CHARACTER.goldMonologue": "[sine]This gold... it may yet be of use...[/sine]",
+    "THREE_KINGDOMS-TK_CHARACTER.possessiveAdjective": "his",
+    "THREE_KINGDOMS-TK_CHARACTER.pronounObject": "him",
+    "THREE_KINGDOMS-TK_CHARACTER.pronounPossessive": "his",
+    "THREE_KINGDOMS-TK_CHARACTER.pronounSubject": "he",
+    "THREE_KINGDOMS-TK_CHARACTER.titleObject": "Three Kingdoms",
+    "THREE_KINGDOMS-TK_CHARACTER.unlockText": "Play a game with [pink]{Prerequisite}[/pink] to unlock this character.",
+    "THREE_KINGDOMS-TK_CHARACTER.banter.alive.endTurnPing": "...",
+    "THREE_KINGDOMS-TK_CHARACTER.banter.dead.endTurnPing": "..."
+}

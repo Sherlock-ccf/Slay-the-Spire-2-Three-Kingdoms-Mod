@@ -1,0 +1,36 @@
+using BaseLib.Abstracts;
+using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.ValueProps;
+using Three_Kingdoms.Character;
+using Three_Kingdoms.Powers;
+using Three_Kingdoms.Node;
+using Three_Kingdoms.Cards.Basic;
+namespace Three_Kingdoms.Cards.Ancient;
+
+[Pool(typeof(TkCardPool))]
+public class LieJiu : CustomCardModel
+{
+    public string SfxPath => $"res://Three_Kingdoms/sfx/{nameof(Jiu)}.mp3";
+    private const int energyCost = 1;
+    private const CardType type = CardType.Skill;
+    private const CardRarity rarity = CardRarity.Ancient;
+    private const TargetType targetType = TargetType.Self;
+    private const bool shouldShowInCardLibrary = true;
+    public override string PortraitPath => $"res://Three_Kingdoms/images/cards/{nameof(LieJiu)}.png";
+    public LieJiu() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+    {
+    }
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        CardPlayer.PlayCardSfx(SfxPath);
+        await CreatureCmd.Damage(choiceContext, Owner.Creature, 1, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);
+        await PowerCmd.Apply<JiuPower>(choiceContext, Owner.Creature, 2m, Owner.Creature, this);
+    }
+    protected override void OnUpgrade()
+    {
+        EnergyCost.UpgradeBy(-1);
+    }
+}

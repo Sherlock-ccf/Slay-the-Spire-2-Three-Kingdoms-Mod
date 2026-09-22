@@ -1,0 +1,75 @@
+using BaseLib.Abstracts;
+using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using Three_Kingdoms.Character;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.Core.HoverTips;
+using Three_Kingdoms.Powers;
+using Three_Kingdoms.Node;
+using Three_Kingdoms.Cards.Basic;
+namespace Three_Kingdoms.Cards.Rare;
+
+[Pool(typeof(TkCardPool))]
+public class JueJin : CustomCardModel
+{
+    private const int energyCost = 3;
+    private const CardType type = CardType.Skill;
+    private const CardRarity rarity = CardRarity.Rare;
+    private const TargetType targetType = TargetType.Self;
+    private const bool shouldShowInCardLibrary = true;
+    public override string PortraitPath => $"res://Three_Kingdoms/images/cards/{nameof(JueJin)}.png";
+    public string SfxPath => $"res://Three_Kingdoms/sfx/{nameof(JueJin)}.mp3";
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new BlockVar("BlockGet",15m, ValueProp.Move),
+        new BlockVar("BlockExtraGet",7m, ValueProp.Move)
+    ];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => new List<CardKeyword> { CardKeyword.Exhaust };
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => new List<IHoverTip> { HoverTipFactory.FromCard<Jiu>() };
+    public JueJin() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+    {
+    }
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        CardPlayer.PlayCardSfx(SfxPath);
+        await CreatureCmd.GainBlock(Owner.Creature, (BlockVar)DynamicVars["BlockGet"], cardPlay);
+        List<CardModel> list_hand = PileType.Hand.GetPile(Owner).Cards.ToList();
+        List<CardModel> list_discard = PileType.Discard.GetPile(Owner).Cards.ToList();
+        List<CardModel> list_draw = PileType.Draw.GetPile(Owner).Cards.ToList();
+        int ExhaustCount = list_hand.Count + list_discard.Count + list_draw.Count;
+        foreach (CardModel card in list_hand)
+        {
+            if (card is Jiu || card is Shan || card is Tao)
+            {
+                await CardCmd.Exhaust(choiceContext, card);
+                await CreatureCmd.GainBlock(Owner.Creature, (BlockVar)DynamicVars["BlockExtraGet"], cardPlay);
+            }
+        }
+        foreach (CardModel card in list_discard)
+        {
+            if (card is Jiu || card is Shan || card is Tao)
+            {
+                await CardCmd.Exhaust(choiceContext, card);
+                await CreatureCmd.GainBlock(Owner.Creature, (BlockVar)DynamicVars["BlockExtraGet"], cardPlay);
+            }
+        }
+        foreach (CardModel card in list_draw)
+        {
+            if (card is Jiu || card is Shan || card is Tao)
+            {
+                await CardCmd.Exhaust(choiceContext, card);
+                await CreatureCmd.GainBlock(Owner.Creature, (BlockVar)DynamicVars["BlockExtraGet"], cardPlay);
+            }
+        }
+        await PowerCmd.Apply<JueJinPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["BlockGet"].UpgradeValueBy(5m);
+        DynamicVars["BlockExtraGet"].UpgradeValueBy(3m);
+    }
+}

@@ -1,0 +1,44 @@
+using BaseLib.Abstracts;
+using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using Three_Kingdoms.Character;
+using Three_Kingdoms.Powers;
+using MegaCrit.Sts2.Core.Models;
+using Three_Kingdoms.Node;
+using Three_Kingdoms.Cards.Ancient;
+namespace Three_Kingdoms.Cards.Basic;
+
+[Pool(typeof(TkCardPool))]
+public class Jiu : CustomCardModel
+{
+	public string SfxPath => $"res://Three_Kingdoms/sfx/{nameof(Jiu)}.mp3";
+    private const int energyCost = 2;
+    private const CardType type = CardType.Skill;
+    private const CardRarity rarity = CardRarity.Basic;
+    private const TargetType targetType = TargetType.Self;
+    private const bool shouldShowInCardLibrary = true;
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new HealVar(3m),
+    ];
+    public CardModel GetTranscendenceTransformedCard() => ModelDb.Card<LieJiu>();
+    public override string PortraitPath => $"res://Three_Kingdoms/images/cards/{nameof(Jiu)}.png";
+    public Jiu() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+    {
+    }
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+		CardPlayer.PlayCardSfx(SfxPath);
+        await CreatureCmd.Heal(
+        Owner.Creature,
+        DynamicVars.Heal.BaseValue
+        );
+        await PowerCmd.Apply<JiuPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+    }
+    protected override void OnUpgrade()
+    {
+        EnergyCost.UpgradeBy(-1);
+    }
+}
