@@ -5,7 +5,8 @@ using slay_the_spire_2_three_kingdoms.Character;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using slay_the_spire_2_three_kingdoms.Cards;
+using slay_the_spire_2_three_kingdoms.Cards.Basic;
+using slay_the_spire_2_three_kingdoms.Cards.Token;
 
 namespace slay_the_spire_2_three_kingdoms.Relics;
 

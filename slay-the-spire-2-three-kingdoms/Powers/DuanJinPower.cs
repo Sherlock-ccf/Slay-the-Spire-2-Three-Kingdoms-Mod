@@ -6,7 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
-using MegaCrit.Sts2.Core.Combat;
+using slay_the_spire_2_three_kingdoms.Cards.Token;
 namespace slay_the_spire_2_three_kingdoms.Powers;
 
 public class DuanJinPower : CustomPowerModel
@@ -22,12 +22,12 @@ public class DuanJinPower : CustomPowerModel
             return;
         }
         CardModel card = cardPlay.Card;
-        if (card.Rarity is CardRarity.Basic)
+        if (card.Rarity is CardRarity.Basic || card is HuoSha)
         {
             if (CombatState != null && CombatState.HittableEnemies.Count > 0)
             {
                 Creature target = CombatState.HittableEnemies[0];
-                await PowerCmd.Apply<WeakPower>(context,target, Amount, Owner.Player.Creature, null);
+                await PowerCmd.Apply<WeakPower>(context, target, Amount, Owner.Player.Creature, null);
             }
         }
     }

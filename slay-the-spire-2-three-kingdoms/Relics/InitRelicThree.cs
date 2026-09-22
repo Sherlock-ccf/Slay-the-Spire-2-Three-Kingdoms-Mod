@@ -8,23 +8,18 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using slay_the_spire_2_three_kingdoms.Cards;
+using slay_the_spire_2_three_kingdoms.Cards.Basic;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Commands;
 
 namespace slay_the_spire_2_three_kingdoms.Relics;
-// 加入哪个遗物池，此处为通用
 [Pool(typeof(TkRelicPool))]
 public class InitRelicThree : CustomRelicModel
 {
-    // 稀有度
     public override RelicRarity Rarity => RelicRarity.Starter;
 
-    // 小图标（原版85x85）
     public override string PackedIconPath => $"res://slay_the_spire_2_three_kingdoms/images/relics/InitRelicOne_sm.png";
-    // 轮廓图标（原版85x85）
     protected override string PackedIconOutlinePath => $"res://slay_the_spire_2_three_kingdoms/images/relics/InitRelicOne_sm.png";
-    // 大图标（原版256x256）
     protected override string BigIconPath => $"res://slay_the_spire_2_three_kingdoms/images/relics/InitRelicOne_bg.png";
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

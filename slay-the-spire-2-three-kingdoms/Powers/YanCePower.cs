@@ -9,7 +9,6 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Random;
-using System.Runtime.Intrinsics.Arm;
 namespace slay_the_spire_2_three_kingdoms.Powers;
 
 

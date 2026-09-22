@@ -4,13 +4,9 @@ using slay_the_spire_2_three_kingdoms.Character;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Factories;
-using MegaCrit.Sts2.Core.Localization;
-using MegaCrit.Sts2.Core.Nodes.CommonUi;
-using MegaCrit.Sts2.Core.Nodes.Screens;
-using slay_the_spire_2_three_kingdoms.Cards;
+using slay_the_spire_2_three_kingdoms.Cards.Basic;
+using slay_the_spire_2_three_kingdoms.Cards.Token;
 
 namespace slay_the_spire_2_three_kingdoms.Relics;
 

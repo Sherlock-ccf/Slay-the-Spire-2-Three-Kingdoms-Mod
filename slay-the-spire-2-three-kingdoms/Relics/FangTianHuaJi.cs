@@ -12,5 +12,5 @@ public class FangTianHuaJi : CustomRelicModel
     public override string PackedIconPath => $"res://slay_the_spire_2_three_kingdoms/images/relics/FangTianHuaJi_sm.png";
     protected override string PackedIconOutlinePath => $"res://slay_the_spire_2_three_kingdoms/images/relics/FangTianHuaJi_sm.png";
     protected override string BigIconPath => $"res://slay_the_spire_2_three_kingdoms/images/relics/FangTianHuaJi_bg.png";
-   
+
 }

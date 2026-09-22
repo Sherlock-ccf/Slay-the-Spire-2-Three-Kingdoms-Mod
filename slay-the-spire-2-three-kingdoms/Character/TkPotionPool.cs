@@ -3,7 +3,6 @@ using BaseLib.Abstracts;
 namespace slay_the_spire_2_three_kingdoms.Character;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models;
-using slay_the_spire_2_three_kingdoms.Cards;
 
 public class TkPotionPool : CustomPotionPoolModel
 {

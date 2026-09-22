@@ -3,7 +3,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using Godot;
-using slay_the_spire_2_three_kingdoms.Cards;
+using slay_the_spire_2_three_kingdoms.Cards.Basic;
 using slay_the_spire_2_three_kingdoms.Relics;
 using System.Diagnostics.CodeAnalysis;
 namespace slay_the_spire_2_three_kingdoms.Character;

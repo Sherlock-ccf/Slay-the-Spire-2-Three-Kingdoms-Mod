@@ -57,7 +57,7 @@ def process_cs_file(filepath):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    cs_files = glob.glob(os.path.join(script_dir, '*.cs'))
+    cs_files = glob.glob(os.path.join(script_dir, '**', '*.cs'), recursive=True)
 
     if not cs_files:
         print('No .cs files found.')

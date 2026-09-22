@@ -8,7 +8,8 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Entities.Creatures;
-using slay_the_spire_2_three_kingdoms.Cards;
+using slay_the_spire_2_three_kingdoms.Cards.Basic;
+using slay_the_spire_2_three_kingdoms.Cards.Token;
 namespace slay_the_spire_2_three_kingdoms.Powers;
 
 public class KuangGuPower : CustomPowerModel

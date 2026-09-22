@@ -7,7 +7,6 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
 using slay_the_spire_2_three_kingdoms.KeyWords;
-using MegaCrit.Sts2.GameInfo.Objects;
 
 namespace slay_the_spire_2_three_kingdoms.Relics;
 
