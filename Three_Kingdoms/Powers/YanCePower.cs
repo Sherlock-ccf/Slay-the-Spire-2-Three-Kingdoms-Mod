@@ -41,7 +41,9 @@ public class YanCePower : CustomPowerModel
         {
             return Task.CompletedTask;
         }
-        Rng rd = Owner.Player.RunState.Rng.CombatPotionGeneration;
+        // Must be a combat-scoped card stream: potion generation is persisted save state, so consuming it
+        // here both perturbs potion rolls and lets this power's sequence drift out of sync between peers.
+        Rng rd = Owner.Player.RunState.Rng.CombatCardGeneration;
         for (int i = 0; i <= 2; i++)
         {
             int num = rd.NextInt(2);

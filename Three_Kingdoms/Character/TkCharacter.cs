@@ -10,69 +10,69 @@ namespace Three_Kingdoms.Character;
 
 public class TkCharacter : PlaceholderCharacterModel
 {
-    // ½ÇÉ«Ãû³ÆÑÕÉ«
+    // ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
     public override Color NameColor => new(1f, 1f, 0.6f);
-    // ÄÜÁ¿Í¼±êÂÖÀªÑÕÉ«
+    // ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
     public override Color EnergyLabelOutlineColor => new(0.8f, 0.7f, 0f);
 
-    // ÈËÎïÐÔ±ð£¨ÄÐÅ®ÖÐÁ¢£©
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½Å®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public override CharacterGender Gender => CharacterGender.Masculine;
 
-    // ³õÊ¼ÑªÁ¿
+    // ï¿½ï¿½Ê¼Ñªï¿½ï¿½
     public override int StartingHp => 70;
 
-    // ÈËÎïÄ£ÐÍtscnÂ·¾¶¡£Òª×Ô¶¨Òå¼ûÏÂ¡£
+    // ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½tscnÂ·ï¿½ï¿½ï¿½ï¿½Òªï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Â¡ï¿½
     public override string CustomVisualPath => "res://Three_Kingdoms/scenes/Tk_character.tscn";
 
-    // ¿¨ÅÆÍÏÎ²³¡¾°¡£
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     // public override string CustomTrailPath => "res://scenes/vfx/card_trail_ironclad.tscn";
 
-    // ÈËÎïÍ·ÏñÂ·¾¶¡£
+    // ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½
     public override string CustomIconTexturePath => "res://icon.svg";
 
-    // ÈËÎïÍ·Ïñ2ºÅ¡£
+    // ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½2ï¿½Å¡ï¿½
     public override string CustomIconPath => "res://Three_Kingdoms/scenes/Tk_icon.tscn";
 
-    // ÄÜÁ¿±íÅÌtscnÂ·¾¶¡£Òª×Ô¶¨Òå¼ûÏÂ¡£
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½tscnÂ·ï¿½ï¿½ï¿½ï¿½Òªï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Â¡ï¿½
     public override string CustomEnergyCounterPath => "res://Three_Kingdoms/scenes/Tk_energy_counter.tscn";
 
-    // óô»ðÐÝÏ¢³¡¾°¡£**
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½**
     public override string CustomRestSiteAnimPath => "res://Three_Kingdoms/scenes/Tk_rest_site.tscn";
 
-    // ÉÌµêÈËÎï³¡¾°¡£**
+    // ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï³¡ï¿½ï¿½ï¿½ï¿½**
     public override string CustomMerchantAnimPath => "res://Three_Kingdoms/scenes/Tk_merchant.tscn";
 
-    // ¶àÈËÄ£Ê½-ÊÖÖ¸¡£
+    // ï¿½ï¿½ï¿½ï¿½Ä£Ê½-ï¿½ï¿½Ö¸ï¿½ï¿½
     // public override string CustomArmPointingTexturePath => null;
-    // ¶àÈËÄ£Ê½¼ôµ¶Ê¯Í·²¼-Ê¯Í·¡£
+    // ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½Ê¯Í·ï¿½ï¿½-Ê¯Í·ï¿½ï¿½
     // public override string CustomArmRockTexturePath => null;
-    // ¶àÈËÄ£Ê½¼ôµ¶Ê¯Í·²¼-²¼¡£
+    // ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½Ê¯Í·ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½
     // public override string CustomArmPaperTexturePath => null;
-    // ¶àÈËÄ£Ê½¼ôµ¶Ê¯Í·²¼-¼ôµ¶¡£
+    // ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½Ê¯Í·ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     // public override string CustomArmScissorsTexturePath => null;
 
-    // ÈËÎïÑ¡Ôñ±³¾°¡£
+    // ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ñ±³¾ï¿½ï¿½ï¿½
     public override string CustomCharacterSelectBg => "res://Three_Kingdoms/scenes/Tk_bg.tscn";
-    // ÈËÎïÑ¡ÔñÍ¼±ê¡£
+    // ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Í¼ï¿½ê¡£
     public override string CustomCharacterSelectIconPath => "res://Three_Kingdoms/images/select/char_select_Tk.png";
-    // ÈËÎïÑ¡ÔñÍ¼±ê-Ëø¶¨×´Ì¬¡£
+    // ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Í¼ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½
     public override string CustomCharacterSelectLockedIconPath => "res://Three_Kingdoms/images/select/char_select_Tk_locked.png";
 
-    // ÈËÎïÑ¡Ôñ¹ý¶É¶¯»­¡£
+    // ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½É¶ï¿½ï¿½ï¿½ï¿½ï¿½
     // public override string CustomCharacterSelectTransitionPath => "res://materials/transitions/ironclad_transition_mat.tres";
 
-    // µØÍ¼ÉÏµÄ½ÇÉ«±ê¼ÇÍ¼±ê¡¢±íÇéÂÖÅÌÉÏµÄ½ÇÉ«Í·Ïñ**
+    // ï¿½ï¿½Í¼ï¿½ÏµÄ½ï¿½É«ï¿½ï¿½ï¿½Í¼ï¿½ê¡¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÄ½ï¿½É«Í·ï¿½ï¿½**
     // public override string CustomMapMarkerPath => null;
 
-    // ¹¥»÷ÒôÐ§
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§
     // public override string CustomAttackSfx => null;
-    // Ê©·¨ÒôÐ§
+    // Ê©ï¿½ï¿½ï¿½ï¿½Ð§
     // public override string CustomCastSfx => null;
-    // ËÀÍöÒôÐ§
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§
     // public override string CustomDeathSfx => null;
-    // ½ÇÉ«Ñ¡ÔñÒôÐ§
+    // ï¿½ï¿½É«Ñ¡ï¿½ï¿½ï¿½ï¿½Ð§
     // public override string CharacterSelectSfx => null;
-    // ¹ý¶ÉÒôÐ§¡£Õâ¸ö²»ÄÜÉ¾¡£
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½
     public override string CharacterTransitionSfx => "event:/sfx/ui/wipe_ironclad";
 
     public override CardPoolModel CardPool => ModelDb.CardPool<TkCardPool>();
@@ -92,9 +92,7 @@ public class TkCharacter : PlaceholderCharacterModel
         ModelDb.Card<Jiu>(),
     ];
     public override IReadOnlyList<RelicModel> StartingRelics => [
-        ModelDb.Relic<InitRelicOne>(),
-        ModelDb.Relic<InitRelicTwo>(),
-        ModelDb.Relic<InitRelicThree>()
+        ModelDb.Relic<InitRelicOne>()
     ];
     public override List<string> GetArchitectAttackVfx() => [
         "vfx/vfx_attack_blunt",
